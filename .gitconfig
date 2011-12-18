@@ -22,3 +22,5 @@
        changed = green
        untracked = cyan
 
+[help]
+	autocorrect = 1
