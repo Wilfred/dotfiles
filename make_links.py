@@ -6,7 +6,6 @@ import os
 class FileExists(OSError): pass
 
 def create_symlink(source_path, target):
-    print("Linking %s to %s" % (source_path, target))
     try:
         os.symlink(source_path, target)
     except OSError as e:
@@ -45,6 +44,7 @@ if __name__ == '__main__':
         
         try:
             create_symlink(source_path, target_path)
+            print("Linking %s to %s" % (source_path, target_path))
         except FileExists:
             print("There is already a file at %s, skipping." % target_path)
 
