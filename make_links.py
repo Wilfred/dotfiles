@@ -20,6 +20,10 @@ def is_configuration_file(file_name):
     # skip .git files specific to the repo
     if file_name in ['.git', '.gitignore']:
         return False
+
+    # emacs backup files
+    if file_name.startswith('.#'):
+        return False
     
     if file_name.startswith('.'):
         return True
