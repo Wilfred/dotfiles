@@ -10,7 +10,6 @@ def create_symlink(source_path, target):
     try:
         os.symlink(source_path, target)
     except OSError as e:
-        raise
         if e.errno == 17: # file exists
             raise FileExists()
         else:
