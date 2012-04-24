@@ -35,4 +35,6 @@ plugins=(git history-substring-search python autojump)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# disable autocorrect
+unsetopt correct
+unsetopt correctall
