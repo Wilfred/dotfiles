@@ -13,7 +13,7 @@ ZSH_THEME="tjkirch"
 alias open="gnome-open"
 alias ack=ack-grep
 alias ub-install="sudo apt-get install"
-alias ub-search="sudo apt-cache search"
+alias ub-search="apt-cache search"
 
 
 # Set to this to use case-sensitive completion
