@@ -33,6 +33,7 @@ COMPLETION_WAITING_DOTS="true"
 
 PATH=$PATH:~/bin/maven2-scripts:/usr/local/mysql/bin
 
+export MYSQL_PS1="\u@\h:mysql> "
 alias mysql-color="rlwrap --always-readline --prompt-colour=GREEN mysql"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
