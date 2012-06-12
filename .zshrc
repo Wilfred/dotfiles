@@ -12,6 +12,7 @@ ZSH_THEME="tjkirch"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias open="gnome-open"
 alias ack=ack-grep
+alias ack-less="ack --page=\"less -R\""
 alias ub-install="sudo apt-get install"
 alias ub-search="apt-cache search"
 
