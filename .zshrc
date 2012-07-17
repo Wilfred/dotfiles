@@ -13,9 +13,8 @@ ZSH_THEME="tjkirch"
 alias open="gnome-open"
 alias ack=ack-grep
 alias ack-less="ack --page=\"less -R\""
-alias ub-install="sudo apt-get install"
-alias ub-search="apt-cache search"
-
+alias apt-install="sudo apt-get install"
+apt-search () { apt-cache search $* | less }
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -39,7 +38,8 @@ alias mysql-color="rlwrap --always-readline --prompt-colour=GREEN mysql"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git history-substring-search python autojump)
+export ZSH_CUSTOM=$HOME/dotfiles/zsh-plugins
+plugins=(git history-substring-search python autojump fabric)
 
 source $ZSH/oh-my-zsh.sh
 
