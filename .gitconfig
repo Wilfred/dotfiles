@@ -23,4 +23,4 @@
        untracked = cyan
 
 [help]
-	autocorrect = 1
+	autocorrect = 20
