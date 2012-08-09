@@ -31,7 +31,7 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-PATH=$PATH:~/bin/maven2-scripts:/usr/local/mysql/bin
+PATH=$PATH:~/bin
 
 export MYSQL_PS1="\u@\h:mysql> "
 alias mysql-color="rlwrap --always-readline --prompt-colour=GREEN mysql"
