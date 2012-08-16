@@ -40,7 +40,9 @@ def get_configuration_file_names(path):
 
 if __name__ == '__main__':
     home_path = os.path.expanduser('~')
-    dotfiles_path = os.getcwd()
+
+    script_path = os.path.realpath(__file__)
+    dotfiles_path = os.path.dirname(script_path)
 
     overwrite = False
     if '--force' in sys.argv:
