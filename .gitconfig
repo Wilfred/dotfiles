@@ -3,6 +3,11 @@
 [user]
 	name = Wilfred Hughes
 	email = me@wilfred.me.uk
+[alias]
+        new-branch = checkout -b
+        change-branch = checkout
+        discard-changes = reset --hard
+        push-current-branch = "!f() { git push origin `git symbolic-ref HEAD`; }; f"
 
 [color]
         branch = auto
