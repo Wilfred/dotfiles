@@ -6,6 +6,7 @@
 [alias]
         new-branch = checkout -b
         change-branch = checkout
+        revert-changes = reset --hard
         discard-changes = reset --hard
         push-current-branch = "!f() { git push origin `git symbolic-ref HEAD`; }; f"
         rename-branch = branch -m
