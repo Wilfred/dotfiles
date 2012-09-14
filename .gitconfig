@@ -4,6 +4,7 @@
 	name = Wilfred Hughes
 	email = me@wilfred.me.uk
 [alias]
+        graph = log --graph --decorate --pretty=oneline --abbrev-commit
         new-branch = checkout -b
         change-branch = checkout
         revert-changes = reset --hard
