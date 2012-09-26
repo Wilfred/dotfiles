@@ -7,11 +7,8 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="tjkirch"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias open="gnome-open"
 alias ack=ack-grep
+alias open="xdg-open"
 alias ack-less="ack --page=\"less -R\""
 alias apt-install="sudo apt-get install"
 apt-search () { apt-cache search $* | less }
