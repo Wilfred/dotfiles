@@ -13,6 +13,7 @@
         rename-branch = branch -m
         delete-branch = "!f() { echo "Deleting remote branch:"; git push origin --delete $1; echo "Deleting local branch:"; git branch -d $1; }; f"
         delete-local-branch = branch -d
+        co = !git-fuzzy
 
 [color]
         branch = auto
