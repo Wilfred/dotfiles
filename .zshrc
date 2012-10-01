@@ -30,6 +30,8 @@ COMPLETION_WAITING_DOTS="true"
 
 PATH=$PATH:~/bin:~/.gem/ruby/1.9.1/bin
 
+export EDITOR=nano
+
 export MYSQL_PS1="\u@\h:mysql> "
 alias mysql-color="rlwrap --always-readline --prompt-colour=GREEN mysql"
 
