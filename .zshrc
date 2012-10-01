@@ -1,12 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="tjkirch"
-
 alias open="xdg-open"
 alias ack-less="ack --page=\"less -R\""
 alias apt-install="sudo apt-get install"
@@ -39,7 +33,17 @@ alias mysql-color="rlwrap --always-readline --prompt-colour=GREEN mysql"
 export ZSH_CUSTOM=$HOME/dotfiles/zsh-plugins
 plugins=(git history-substring-search python autojump fabric)
 
+# theme in ~/.oh-my-zsh/themes/
+ZSH_THEME="tjkirch"
+
 source $ZSH/oh-my-zsh.sh
+
+# don't display 'fail <exit-code>' since it interacts badly with
+# virtualenv's appending of the environment name
+# (modified from tjkirch theme)
+export PROMPT='%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}: %{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info)
+%_$(prompt_char) '
+
 
 # disable autocorrect
 unsetopt correct
