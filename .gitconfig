@@ -5,6 +5,8 @@
 	email = me@wilfred.me.uk
 [alias]
         graph = log --graph --decorate --pretty=oneline --abbrev-commit
+        lol = log --graph --decorate --pretty=oneline --abbrev-commit
+        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
         new-branch = checkout -b
         change-branch = checkout
         revert-changes = reset --hard
