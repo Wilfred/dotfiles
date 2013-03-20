@@ -6,8 +6,7 @@ alias ack-less="ack --page=\"less -R\""
 alias apt-install="sudo apt-get install"
 apt-search () { apt-cache search $* | less }
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
 DISABLE_AUTO_UPDATE="true"
