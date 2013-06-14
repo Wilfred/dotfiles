@@ -13,7 +13,7 @@
         discard-changes = reset --hard
         push-current-branch = "!f() { git push origin `git symbolic-ref HEAD`; }; f"
         # see http://stackoverflow.com/a/17029936/509706
-        prune-local = "!f() { git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d }; f"
+        prune-local = !git-prune-local
         rename-branch = branch -m
         delete-branch = "!f() { echo "Deleting remote branch:"; git push origin --delete $1; echo "Deleting local branch:"; git branch -d $1; }; f"
         delete-local-branch = branch -d
