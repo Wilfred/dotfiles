@@ -20,7 +20,7 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-PATH=$PATH:~/bin:~/.gem/ruby/1.9.1/bin
+PATH=$PATH:~/bin:~/.gem/ruby/2.0.0/bin:~/.cabal/bin
 
 export EDITOR=zile
 
