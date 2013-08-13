@@ -1,5 +1,5 @@
 [flake8]
 # Generally, we only use flake8 for pyflakes checks, so we aggressively switch off pep8.
 # New code should follow PEP 8, but style fixes on legacy code are not a priority.
-ignore = W291,W292,W293,W391,W602,E41,E101,E121,E122,E123,E126,E128,E203,E221,E225,E226,E261,E231,E251,E301,E302,E303,E703
+ignore = W191,W291,W292,W293,W391,W602,E41,E101,E121,E122,E123,E124,E125,E126,E127,E128,E203,E221,E225,E226,E241,E261,E231,E251,E271,E272,E301,E302,E303,E701,E702,E703
 max-line-length = 120
