@@ -16,7 +16,9 @@ def create_symlink(source_path, target, overwrite=False):
     os.symlink(source_path, target)
 
 
-def is_configuration_file(file_name):
+def is_configuration_file(path):
+    file_name = os.path.basename(path)
+    
     # skip .git files specific to the repo
     if file_name in ['.git', '.gitignore']:
         return False
@@ -33,9 +35,15 @@ def is_configuration_file(file_name):
 
 def get_configuration_file_names(path):
     for file_name in os.listdir(path):
-        if is_configuration_file(file_name):
-            
-            yield file_name
+        absolute_path = os.path.join(path, file_name)
+        
+        if is_configuration_file(absolute_path):
+
+            if os.path.isdir(absolute_path):
+                for nested_file_name in os.listdir(absolute_path):
+                    yield os.path.join(file_name, nested_file_name)
+            else:
+                yield file_name
 
 
 if __name__ == '__main__':
