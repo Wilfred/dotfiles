@@ -49,6 +49,8 @@ export PROMPT='%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_colo
 unsetopt correct
 unsetopt correctall
 
+alias sst='svn status'
+
 # less colours -- since man uses less as a pager, this gives us
 # coloured man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
