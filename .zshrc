@@ -49,6 +49,9 @@ export PROMPT='%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_colo
 unsetopt correct
 unsetopt correctall
 
+# disable extended globbing, otherwise we can't wget URLs with # in without quoting the whole URL.
+unsetopt extendedglob
+
 alias sst='svn status'
 
 # less colours -- since man uses less as a pager, this gives us
