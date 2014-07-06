@@ -20,8 +20,10 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-PATH=$PATH:~/bin:~/.gem/ruby/2.0.0/bin:~/.cabal/bin:~/.cask/bin
+PATH=$PATH:~/bin:~/.cabal/bin:~/.cask/bin
 PATH=$PATH:/usr/local/heroku/bin
+PATH=$PATH:~/.gem/ruby/2.0.0/bin
+PATH=$PATH:~/.gem/ruby/2.1.0/bin
 
 export EDITOR=zile
 
