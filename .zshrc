@@ -33,7 +33,7 @@ alias mysql-color="rlwrap --always-readline --prompt-colour=GREEN mysql"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 export ZSH_CUSTOM=$HOME/dotfiles/zsh-plugins
-plugins=(git history-substring-search python autojump fabric)
+plugins=(git history-substring-search python fabric)
 
 # theme in ~/.oh-my-zsh/themes/
 ZSH_THEME="tjkirch"
@@ -69,3 +69,5 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 # share history between terminals, from http://askubuntu.com/q/23630
 setopt inc_append_history
 setopt share_history
+
+eval "$(fasd --init auto)"
