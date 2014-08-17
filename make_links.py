@@ -13,6 +13,13 @@ def create_symlink(source_path, target, overwrite=False):
         else:
             raise FileExists()
 
+    elif os.path.islink(target):
+        # It's a broken symlink.
+        if overwrite:
+            os.unlink(target)
+        else:
+            raise FileExists("Broken symlink exists")
+
     os.symlink(source_path, target)
 
 
