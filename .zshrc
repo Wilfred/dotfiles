@@ -56,6 +56,9 @@ unsetopt extendedglob
 
 alias sst='svn status'
 
+# quiet gdb's verbose startup
+alias gdb="gdb -q"
+
 # less colours -- since man uses less as a pager, this gives us
 # coloured man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
