@@ -102,3 +102,7 @@ setopt share_history
 
 # fasd provides directory jumping with 'z'
 eval "$(fasd --init auto)"
+
+# virtualenvwrapper configuration
+export WORKON_HOME=$HOME/.py_envs
+source /usr/bin/virtualenvwrapper.sh
