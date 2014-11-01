@@ -100,4 +100,5 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 setopt inc_append_history
 setopt share_history
 
+# fasd provides directory jumping with 'z'
 eval "$(fasd --init auto)"
