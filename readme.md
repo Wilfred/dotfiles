@@ -21,3 +21,8 @@ If you have old configuration you want to wipe, pass `--force` to make_links:
 
 make_links will copy any file whose name is `.FOO` or `.FOO/BAR`,
 except git metadata.
+
+## Other executables
+
+I use ag ('the silver searcher'), ack (a slower ag), git-fuzzy (on my
+GitHub) and icdiff.
