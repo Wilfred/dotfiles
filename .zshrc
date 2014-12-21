@@ -106,3 +106,6 @@ eval "$(fasd --init auto)"
 # virtualenvwrapper configuration
 export WORKON_HOME=$HOME/.py_envs
 source /usr/bin/virtualenvwrapper.sh
+
+# Don't use cowsay with ansible
+export ANSIBLE_NOCOWS=1
