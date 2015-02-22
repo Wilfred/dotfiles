@@ -53,6 +53,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:~/bin:~/.cabal/bin:~/.cask/bin
 export PATH=$PATH:/usr/local/heroku/bin
+export PATH=$PATH:~/.gem/ruby/2.1.0/bin
 export PATH=$PATH:~/.gem/ruby/2.2.0/bin
 
 # You may need to manually set your language environment
@@ -103,7 +104,7 @@ setopt share_history
 eval "$(fasd --init auto)"
 
 # virtualenvwrapper configuration
-export WORKON_HOME=$HOME/.py_envs
+export WORKON_HOME=$HOME/.envs
 source /usr/bin/virtualenvwrapper.sh
 
 # Don't use cowsay with ansible
