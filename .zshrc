@@ -53,7 +53,6 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:~/bin:~/.cabal/bin:~/.cask/bin
 export PATH=$PATH:/usr/local/heroku/bin
-export PATH=$PATH:~/.gem/ruby/2.1.0/bin
 export PATH=$PATH:~/.gem/ruby/2.2.0/bin
 
 # You may need to manually set your language environment
