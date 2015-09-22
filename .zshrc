@@ -45,7 +45,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git history-substring-search python)
+plugins=(history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -68,8 +68,8 @@ alias mysql-color="rlwrap --always-readline --prompt-colour=GREEN mysql"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
 alias sst='svn status'
+alias gst='git status'
 
 # quieten gdb's verbose startup
 alias gdb="gdb -q"
