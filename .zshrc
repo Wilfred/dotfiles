@@ -53,6 +53,7 @@ fi
 export PATH=$PATH:~/bin:~/.cabal/bin:~/.cask/bin
 export PATH=$PATH:/usr/local/heroku/bin
 export PATH=$PATH:~/.gem/ruby/2.2.0/bin
+export PATH="$PATH":~/.multirust/toolchains/nightly/cargo/bin
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
