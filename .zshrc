@@ -54,7 +54,6 @@ else
     setopt auto_cd
 fi
 
-# User configuration
 
 export PATH=$PATH:~/bin:~/.cabal/bin:~/.cask/bin
 export PATH=$PATH:/usr/local/heroku/bin
