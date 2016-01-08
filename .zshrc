@@ -70,15 +70,15 @@ alias gst='git status'
 alias gdb="gdb -q"
 
 alias open="xdg-open"
-alias ack-less="ack --page=\"less -R\""
+
 alias apt-install="sudo apt-get install"
 apt-search () { apt-cache search $* | less }
 
 # Don't display 'fail <exit-code>' since it interacts badly with
 # virtualenv's appending of the environment name
 # (modified from tjkirch theme).
-export PROMPT='%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}%(?..[%{$fg[red]%}%?%{$reset_color%}]): %{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info)
-%_$(prompt_char) '
+# export PROMPT='%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}%(?..[%{$fg[red]%}%?%{$reset_color%}]): %{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info)
+# %_$(prompt_char) '
 
 # less colours -- since man uses less as a pager, this gives us
 # coloured man pages
