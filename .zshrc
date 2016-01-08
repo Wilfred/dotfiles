@@ -104,9 +104,11 @@ if hash fasd 2>/dev/null; then
     eval "$(fasd --init auto)"
 fi
 
-# virtualenvwrapper configuration
-export WORKON_HOME=$HOME/.envs
-source /usr/bin/virtualenvwrapper.sh
+if [ -f /usr/bin/virtualenvwrapper.sh ]; then
+    # virtualenvwrapper configuration
+    export WORKON_HOME=$HOME/.envs
+    source /usr/bin/virtualenvwrapper.sh
+fi
 
 # Don't use cowsay with ansible
 export ANSIBLE_NOCOWS=1
