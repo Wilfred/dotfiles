@@ -99,8 +99,10 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 setopt inc_append_history
 setopt share_history
 
-# fasd provides directory jumping with 'z'
-eval "$(fasd --init auto)"
+if hash fasd 2>/dev/null; then
+    # fasd provides directory jumping with 'z'
+    eval "$(fasd --init auto)"
+fi
 
 # virtualenvwrapper configuration
 export WORKON_HOME=$HOME/.envs
