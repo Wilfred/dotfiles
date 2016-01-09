@@ -107,3 +107,6 @@ fi
 
 # Don't use cowsay with ansible
 export ANSIBLE_NOCOWS=1
+
+# More information in ninja status line: Remaining/in progress/done, time
+export NINJA_STATUS="[%u/%r/%f %e] "
