@@ -43,6 +43,12 @@ if [ -d $ZSH ]; then
     plugins=(history-substring-search)
 
     source $ZSH/oh-my-zsh.sh
+
+    # Don't display 'fail <exit-code>' since it interacts badly with
+    # virtualenv's appending of the environment name
+    # (modified from tjkirch theme).
+    export PROMPT='%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}%(?..[%{$fg[red]%}%?%{$reset_color%}]): %{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info)
+%_$(prompt_char) '
 else
     alias ls='ls -GF --color=auto'
 
