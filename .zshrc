@@ -56,6 +56,9 @@ else
     autoload -U colors && colors
     PS1="%{$fg[yellow]%}%~ %{$reset_color%}% "
 
+    # tab completion
+    autoload -Uz compinit && compinit
+
     if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
         source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     fi
