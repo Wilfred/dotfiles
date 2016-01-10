@@ -56,6 +56,10 @@ else
     autoload -U colors && colors
     PS1="%{$fg[yellow]%}%~ %{$reset_color%}% "
 
+    if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+        source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    fi
+
     source .zsh-history-substring-search.zsh
     zmodload zsh/terminfo
     bindkey "$terminfo[kcuu1]" history-substring-search-up
