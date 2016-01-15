@@ -63,7 +63,7 @@ else
         source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     fi
 
-    source .zsh-history-substring-search.zsh
+    source ~/.zsh-history-substring-search.zsh
     zmodload zsh/terminfo
     bindkey "$terminfo[kcuu1]" history-substring-search-up
     bindkey "$terminfo[kcud1]" history-substring-search-down
