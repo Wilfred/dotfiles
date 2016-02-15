@@ -137,9 +137,9 @@ if hash fasd 2>/dev/null; then
 fi
 
 if [ -f /usr/bin/virtualenvwrapper.sh ]; then
-    # virtualenvwrapper configuration
     export WORKON_HOME=$HOME/.envs
-    source /usr/bin/virtualenvwrapper.sh
+    export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
+    source /usr/bin/virtualenvwrapper_lazy.sh
 fi
 
 # Don't use cowsay with ansible
