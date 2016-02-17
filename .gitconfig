@@ -43,3 +43,9 @@
 	default = simple
 [diff]
 	algorithm = patience
+[transfer]
+        fsckobjects = true
+[fetch]
+        fsckobjects = true
+[receive]
+        fsckObjects = true
