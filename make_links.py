@@ -20,6 +20,10 @@ def create_symlink(source_path, target, overwrite=False):
         else:
             raise FileExists("Broken symlink exists")
 
+    target_parent = os.path.dirname(target)
+    if not os.path.exists(target_parent):
+        os.makedirs(target_parent)
+
     os.symlink(source_path, target)
 
 
