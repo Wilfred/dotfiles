@@ -91,6 +91,7 @@ export PATH=$PATH:~/bin:~/.cabal/bin:~/.cask/bin
 export PATH=$PATH:/usr/local/heroku/bin
 export PATH="$PATH":~/.gem/ruby/2.3.0/bin
 export PATH="$PATH":~/.multirust/toolchains/nightly/cargo/bin
+export PATH="/home/wilfred/.evm/bin:$PATH"
 
 # Ensure 'npm install -g' works without sudo, based on
 # https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
