@@ -95,7 +95,7 @@ set $SKIPSTEP = 1
 # show the ARM opcodes - change to 0 if you don't want such thing (in x/i command)
 set $ARMOPCODES = 1
 # x86 disassembly flavor: 0 for Intel, 1 for AT&T
-set $X86FLAVOR = 0
+set $X86FLAVOR = 1
 # use colorized output or not
 set $USECOLOR = 1
 # to use with remote KDP
