@@ -86,6 +86,8 @@ else
     setopt EXTENDED_HISTORY        # save timestamp and runtime information
 fi
 
+# allow bash-style # comments
+setopt interactivecomments
 
 export PATH=$PATH:~/bin:~/.cabal/bin:~/.cask/bin
 export PATH=$PATH:/usr/local/heroku/bin
