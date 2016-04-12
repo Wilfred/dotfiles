@@ -7,10 +7,6 @@
         graph = log --graph --decorate --pretty=oneline --abbrev-commit
         lol = log --graph --decorate --pretty=oneline --abbrev-commit
         lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-        new-branch = checkout -b
-        change-branch = checkout
-        revert-changes = reset --hard
-        discard-changes = reset --hard
         push-current-branch = "!f() { git push origin `git symbolic-ref HEAD`; }; f"
         # see http://stackoverflow.com/a/17029936/509706
         prune-local = !git-prune-local
