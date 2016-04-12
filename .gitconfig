@@ -4,6 +4,7 @@
 	name = Wilfred Hughes
 	email = me@wilfred.me.uk
 [alias]
+        b = branch
         graph = log --graph --decorate --pretty=oneline --abbrev-commit
         lol = log --graph --decorate --pretty=oneline --abbrev-commit
         lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
