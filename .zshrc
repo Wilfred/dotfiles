@@ -151,4 +151,7 @@ fi
 # Don't use cowsay with ansible
 export ANSIBLE_NOCOWS=1
 
+# all the interesting windows apps I use are 32-bit
+export WINEARCH=win32
+
 export NINJA_STATUS="[done:%f doing:%r left:%u elapsed:%e] "
