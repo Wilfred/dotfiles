@@ -117,6 +117,9 @@ alias gst='git status'
 # quieten gdb's verbose startup
 alias gdb="gdb -q"
 
+# quick and dirty compile alias
+alias compile='gcc -Wall -Wextra -g'
+
 alias open="xdg-open"
 
 alias apt-install="sudo apt-get install"
