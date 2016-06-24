@@ -1,5 +1,6 @@
 [core]
 	editor = zile
+	excludesfile = /users/is/whughes/.gitignore_global
 [user]
 	name = Wilfred Hughes
 	email = me@wilfred.me.uk
