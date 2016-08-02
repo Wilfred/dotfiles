@@ -92,7 +92,7 @@ setopt interactivecomments
 export PATH=$PATH:~/bin:~/.cabal/bin:~/.cask/bin
 export PATH=$PATH:/usr/local/heroku/bin
 export PATH="$PATH":~/.gem/ruby/2.3.0/bin
-export PATH="$PATH":~/.multirust/toolchains/nightly/cargo/bin
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/home/wilfred/.evm/bin:$PATH"
 
 # Ensure 'npm install -g' works without sudo, based on
