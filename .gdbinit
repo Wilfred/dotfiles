@@ -3991,3 +3991,7 @@ end
 #
 #   Version 2
 #     Radix bugfix by elaine
+
+# Don't catch SIGPWR (Guile-Emacs signals this during startup).
+# Based on http://stackoverflow.com/q/27961738/509706
+handle SIGXCPU SIG33 SIG35 SIGPWR nostop noprint
