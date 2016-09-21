@@ -12,6 +12,10 @@
         push-current-branch = "!f() { git push origin `git symbolic-ref HEAD`; }; f"
         # see http://stackoverflow.com/a/17029936/509706
         prune-local = !git-prune-local
+        # http://stackoverflow.com/a/6127884/509706
+        # Remove local branches that have merged into master or develop
+        rm-merged = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+        ls-merged = "!git branch --merged"
         rename-branch = branch -m
         delete-branch = "!f() { echo "Deleting remote branch:"; git push origin --delete $1; echo "Deleting local branch:"; git branch -d $1; }; f"
         co = !git-fuzzy
