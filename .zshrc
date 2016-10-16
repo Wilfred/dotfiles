@@ -111,9 +111,6 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
 export EDITOR=zile
 
 export MYSQL_PS1="\u@\h:mysql> "
