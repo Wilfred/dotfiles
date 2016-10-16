@@ -89,7 +89,8 @@ fi
 # allow bash-style # comments
 setopt interactivecomments
 
-export PATH=$PATH:~/bin:~/.cabal/bin:~/.cask/bin
+export PATH=~/bin:$PATH
+export PATH=$PATH:~/.cabal/bin:~/.cask/bin
 export PATH=$PATH:/usr/local/heroku/bin
 export PATH="$PATH":~/.gem/ruby/2.3.0/bin
 export PATH="$HOME/.cargo/bin:$PATH"
