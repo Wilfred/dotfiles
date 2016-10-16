@@ -59,6 +59,13 @@ else
     # tab completion
     autoload -Uz compinit && compinit
 
+    # Ensure that Alt-Backspace only deletes up to the last slash,
+    # not the whole path.
+    # http://stackoverflow.com/a/1438523/509706
+    # https://github.com/zsh-users/zsh-syntax-highlighting/issues/67
+    autoload -U select-word-style
+    select-word-style bash
+
     if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
         source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     fi
