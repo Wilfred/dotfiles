@@ -50,3 +50,6 @@
         fsckobjects = true
 [receive]
         fsckObjects = true
+
+[url "git@github.com:"]
+        insteadOf = gh:
