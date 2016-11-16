@@ -53,3 +53,5 @@
 
 [url "git@github.com:"]
         insteadOf = gh:
+[rerere]
+	enabled = true
