@@ -44,6 +44,7 @@
 	default = simple
 [diff]
 	algorithm = patience
+	mnemonicprefix = true
 
 [url "git@github.com:"]
         insteadOf = gh:
