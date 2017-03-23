@@ -41,7 +41,7 @@
 [help]
 	autocorrect = 20
 [push]
-	default = simple
+	default = current
 [diff]
 	algorithm = patience
 	mnemonicprefix = true
