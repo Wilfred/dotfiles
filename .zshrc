@@ -165,3 +165,8 @@ export ANSIBLE_NOCOWS=1
 export WINEARCH=win32
 
 export NINJA_STATUS="[done:%f doing:%r left:%u elapsed:%e] "
+
+# Expand 'cd -' to previously visited directories.
+# http://unix.stackexchange.com/a/157773/61642
+setopt AUTO_PUSHD
+zstyle ':completion:*:directory-stack' list-colors '=(#b) #([0-9]#)*( *)==95=38;5;12'
