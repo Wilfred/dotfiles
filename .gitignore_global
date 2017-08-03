@@ -1,3 +1,6 @@
 TAGS
 cscope.*
 .tern-port
+.tramp_history
+.agignore
+.hypothesis
