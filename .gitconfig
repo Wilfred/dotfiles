@@ -6,7 +6,6 @@
 	email = me@wilfred.me.uk
 [alias]
         b = branch
-        graph = log --graph --decorate --pretty=oneline --abbrev-commit
         lol = log --graph --decorate --pretty=oneline --abbrev-commit
         lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
         push-current-branch = "!f() { git push origin `git symbolic-ref HEAD`; }; f"
