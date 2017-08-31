@@ -1,4 +1,8 @@
 [flake8]
 # pyflakes: http://flake8.pycqa.org/en/latest/user/error-codes.html
 # pep8: http://pep8.readthedocs.io/en/latest/intro.html#error-codes
-select = W1,E10,E11,E9,F
+
+# Ignoring whitespace warnings W2 and blank lines warning E3.
+select = W1,W3,W5,W6,E1,E2,E302,E4,E5,E7,E9,F,C
+max-line-length = 200
+max-complexity = 15
