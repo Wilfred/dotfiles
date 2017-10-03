@@ -42,6 +42,7 @@
 	autocorrect = 20
 [push]
 	default = current
+	recurseSubmodules = on-demand
 [diff]
 	algorithm = patience
 	mnemonicprefix = true
