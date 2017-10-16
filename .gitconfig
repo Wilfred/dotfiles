@@ -58,3 +58,5 @@
 	pruneExpire = 30 days
 [status]
 	submoduleSummary = true
+[merge]
+	conflictStyle = diff3
