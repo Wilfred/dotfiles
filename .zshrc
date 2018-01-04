@@ -54,7 +54,7 @@ else
 
     # http://stackoverflow.com/a/2534676
     autoload -U colors && colors
-    PS1="%{$fg[yellow]%}%~ $ %{$reset_color%}%"
+    PS1="%{$fg[yellow]%}%~ "$'\n'"$ %{$reset_color%}%"
 
     # tab completion
     autoload -Uz compinit && compinit
