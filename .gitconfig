@@ -57,7 +57,7 @@
 [advice]
 	statusHints = false
 [gc]
-	pruneExpire = 30 days
+	pruneExpire = 60 days
 [status]
 	submoduleSummary = true
 [merge]
