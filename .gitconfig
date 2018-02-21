@@ -12,6 +12,9 @@
         nw = "!f() { git worktree add $1 -b $1; }; f"
         # Existing branch in a Worktree.
         ew = "!f() { git worktree add $1 $1; }; f"
+        # List Worktrees.
+        lw = "!f() { git worktree prune && git worktree list; }; f"
+
         lol = log --graph --decorate --pretty=oneline --abbrev-commit
         lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
         push-current-branch = "!f() { git push origin `git symbolic-ref HEAD`; }; f"
