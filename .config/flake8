@@ -5,7 +5,8 @@
 # Ignoring:
 # whitespace warnings W2
 # comment spacing warnings E26
+# arithmetic spacing E226
 # blank lines warning E3
-select = W1,W3,W5,W6,E1,E20,E21,E22,E23,E24,E25,E27,E4,E5,E7,E9,F,C
+select = W1,W3,W5,W6,E1,E20,E21,E23,E24,E25,E27,E4,E5,E7,E9,F,C
 max-line-length = 200
 max-complexity = 15
