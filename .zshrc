@@ -116,6 +116,8 @@ export EDITOR=zile
 export MYSQL_PS1="\u@\h:mysql> "
 alias mysql-color="rlwrap --always-readline --prompt-colour=GREEN mysql"
 
+alias docker='sudo docker'
+
 alias sst='svn status'
 alias gst='git status'
 
