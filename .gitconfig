@@ -10,6 +10,8 @@
         nb = checkout -b
         # New branch in a Worktree.
         nw = "!f() { git worktree add $1 -b $1; }; f"
+        # New branch in a Worktree From a specified branch
+        nwf = "!f() { git worktree add $2 -b $2 $1; }; f"
         # Existing branch in a Worktree.
         ew = "!f() { git worktree add $1 $1; }; f"
         # List Worktrees.
