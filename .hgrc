@@ -1,0 +1,21 @@
+# see 'hg help config' for more info
+[ui]
+# name and email
+username = Wilfred Hughes <me@wilfred.me.uk>
+
+# We recommend enabling tweakdefaults to get slight improvements to
+# the UI over time. Make sure to set HGPLAIN in the environment when
+# writing scripts!
+tweakdefaults = True
+
+# uncomment to disable command output pagination
+# (see 'hg help pager' for details)
+# paginate = never
+
+interface = curses
+
+[extensions]
+# uncomment these lines to enable some popular extensions
+# (see 'hg help extensions' for more info)
+shelve = 
+mq = 
