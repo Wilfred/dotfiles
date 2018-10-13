@@ -1,5 +1,8 @@
 [core]
 	editor = zile
+        # Only use less when the output is more than one screen
+        # https://stackoverflow.com/a/39393497/509706
+        pager = less -XF
 	excludesfile = ~/.gitignore_global
 [user]
 	name = Wilfred Hughes
