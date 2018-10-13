@@ -8,11 +8,13 @@ username = Wilfred Hughes <me@wilfred.me.uk>
 # writing scripts!
 tweakdefaults = True
 
-# uncomment to disable command output pagination
-# (see 'hg help pager' for details)
-# paginate = never
-
 interface = curses
+
+# command output pagination
+# (see 'hg help pager' for details)
+# https://www.mercurial-scm.org/wiki/PagerExtension
+[pager]
+pager = LESS='FRX' less
 
 [extensions]
 # uncomment these lines to enable some popular extensions
