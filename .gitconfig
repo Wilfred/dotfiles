@@ -71,3 +71,5 @@
 	submoduleSummary = true
 [merge]
 	conflictStyle = diff3
+[include]
+        path = ~/.gitconfig.private
