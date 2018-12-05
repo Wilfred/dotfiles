@@ -1,97 +1,44 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+alias ls='ls -GF'
 
-if [ -d $ZSH ]; then
-    # Uncomment the following line to use case-sensitive completion.
-    CASE_SENSITIVE="true"
+# http://stackoverflow.com/a/2534676
+autoload -U colors && colors
+PS1="%{$fg[yellow]%}%~ "$'\n'"$ %{$reset_color%}%"
 
-    # Uncomment the following line to disable bi-weekly auto-update checks.
-    DISABLE_AUTO_UPDATE="true"
+# tab completion
+autoload -Uz compinit && compinit
 
-    # Uncomment the following line to change how often to auto-update (in days).
-    # export UPDATE_ZSH_DAYS=13
+# Ensure that Alt-Backspace only deletes up to the last slash,
+# not the whole path.
+# http://stackoverflow.com/a/1438523/509706
+# https://github.com/zsh-users/zsh-syntax-highlighting/issues/67
+autoload -U select-word-style
+select-word-style bash
 
-    # Uncomment the following line to disable colors in ls.
-    # DISABLE_LS_COLORS="true"
-
-    # Uncomment the following line to disable auto-setting terminal title.
-    # DISABLE_AUTO_TITLE="true"
-
-    # Uncomment the following line to enable command auto-correction.
-    # ENABLE_CORRECTION="true"
-
-    # Uncomment the following line to display red dots whilst waiting for completion.
-    COMPLETION_WAITING_DOTS="true"
-
-    # Uncomment the following line if you want to disable marking untracked files
-    # under VCS as dirty. This makes repository status check for large repositories
-    # much, much faster.
-    DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-    # Uncomment the following line if you want to change the command execution time
-    # stamp shown in the history command output.
-    # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-    HIST_STAMPS="yyyy-mm-dd"
-
-    # Would you like to use another custom folder than $ZSH/custom?
-    # ZSH_CUSTOM=/path/to/new-custom-folder
-
-    # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-    # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-    # Example format: plugins=(rails git textmate ruby lighthouse)
-    # Add wisely, as too many plugins slow down shell startup.
-    plugins=(history-substring-search)
-
-    source $ZSH/oh-my-zsh.sh
-
-    # Don't display 'fail <exit-code>' since it interacts badly with
-    # virtualenv's appending of the environment name
-    # (modified from tjkirch theme).
-    export PROMPT='%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}%(?..[%{$fg[red]%}%?%{$reset_color%}]): %{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info)
-%_$(prompt_char) '
-else
-    alias ls='ls -GF --color=auto'
-
-    # http://stackoverflow.com/a/2534676
-    autoload -U colors && colors
-    PS1="%{$fg[yellow]%}%~ "$'\n'"$ %{$reset_color%}%"
-
-    # tab completion
-    autoload -Uz compinit && compinit
-
-    # Ensure that Alt-Backspace only deletes up to the last slash,
-    # not the whole path.
-    # http://stackoverflow.com/a/1438523/509706
-    # https://github.com/zsh-users/zsh-syntax-highlighting/issues/67
-    autoload -U select-word-style
-    select-word-style bash
-
-    if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-        source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    fi
-    if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-        source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    fi
-
-    source ~/.zsh-history-substring-search.zsh
-    zmodload zsh/terminfo
-    bindkey "$terminfo[kcuu1]" history-substring-search-up
-    bindkey "$terminfo[kcud1]" history-substring-search-down
-
-    bindkey '^[[A' history-substring-search-up
-    bindkey '^[[B' history-substring-search-down
-
-    # allow 'foo' instead of 'cd foo'.
-    setopt auto_cd
-
-    ## History
-    HISTFILE=$HOME/.zhistory       # enable history saving on shell exit
-    setopt APPEND_HISTORY          # append rather than overwrite history file.
-    HISTSIZE=1200                  # lines of history to maintain memory
-    SAVEHIST=1000                  # lines of history to maintain in history file.
-    setopt HIST_EXPIRE_DUPS_FIRST  # allow dups, but expire old ones when I hit HISTSIZE
-    setopt EXTENDED_HISTORY        # save timestamp and runtime information
+if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+source ~/.zsh-history-substring-search.zsh
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# allow 'foo' instead of 'cd foo'.
+setopt auto_cd
+
+## History
+HISTFILE=$HOME/.zhistory       # enable history saving on shell exit
+setopt APPEND_HISTORY          # append rather than overwrite history file.
+HISTSIZE=1200                  # lines of history to maintain memory
+SAVEHIST=1000                  # lines of history to maintain in history file.
+setopt HIST_EXPIRE_DUPS_FIRST  # allow dups, but expire old ones when I hit HISTSIZE
+setopt EXTENDED_HISTORY        # save timestamp and runtime information
 
 # allow bash-style # comments
 setopt interactivecomments
