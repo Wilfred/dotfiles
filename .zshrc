@@ -1,4 +1,4 @@
-alias ls='ls -GF'
+alias ls='ls -GF --color=auto'
 
 # http://stackoverflow.com/a/2534676
 autoload -U colors && colors
