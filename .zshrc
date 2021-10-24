@@ -101,9 +101,9 @@ export LESS=-RSI
 setopt inc_append_history
 setopt share_history
 
-if hash fasd 2>/dev/null; then
-    # fasd provides directory jumping with 'z'
-    eval "$(fasd --init auto)"
+if hash zoxide 2>/dev/null; then
+    eval "$(zoxide init zsh)"
+    alias zz=zi
 fi
 
 if [ -f /usr/bin/virtualenvwrapper.sh ]; then
