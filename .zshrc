@@ -120,6 +120,10 @@ export ANSIBLE_NOCOWS=1
 # all the interesting windows apps I use are 32-bit
 export WINEARCH=win32
 
+# Work around invisible null on dark themes.
+# https://github.com/stedolan/jq/issues/1972
+export JQ_COLORS='0;37:0;39:0;39:0;39:0;32:1;39:1;39'
+
 export NINJA_STATUS="[done:%f doing:%r left:%u elapsed:%e] "
 
 # Expand 'cd -' to previously visited directories.
