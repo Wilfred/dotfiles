@@ -21,3 +21,7 @@ pager = LESS='FRX' less
 # (see 'hg help extensions' for more info)
 shelve = 
 mq = 
+extdiff =
+
+[extdiff]
+cmd.dft = difft
