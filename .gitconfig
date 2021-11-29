@@ -78,3 +78,5 @@
         path = ~/.gitconfig.private
 [pull]
 	ff = only
+[init]
+	defaultBranch = main
