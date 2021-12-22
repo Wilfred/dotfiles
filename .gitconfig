@@ -34,6 +34,8 @@
         co = !git-fuzzy
         up = merge @{u} --ff-only
 
+        dft = difftool
+
 [color]
         branch = auto
         diff = auto
@@ -61,6 +63,7 @@
 	algorithm = patience
 	mnemonicprefix = true
 	submodule = log
+        tool = difftastic
 
 [url "git@github.com:"]
         insteadOf = gh:
@@ -80,3 +83,9 @@
 	ff = only
 [init]
 	defaultBranch = main
+
+[difftool]
+        prompt = false
+
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
