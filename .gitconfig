@@ -92,3 +92,6 @@
 
 [difftool "difftastic"]
         cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+        difftool = true
