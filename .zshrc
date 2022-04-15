@@ -7,6 +7,12 @@ PS1="%{$fg[yellow]%}%~ "$'\n'"$ %{$reset_color%}%"
 # tab completion
 autoload -Uz compinit && compinit
 
+# Store execution time taken in history, visible with `history -D`.
+setopt inc_append_history_time
+
+# Report the time taken for commands that take more than 10 seconds to terminate.
+REPORTTIME=10
+
 # Ensure that Alt-Backspace only deletes up to the last slash,
 # not the whole path.
 # http://stackoverflow.com/a/1438523/509706
