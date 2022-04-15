@@ -125,6 +125,11 @@ if [ -f /usr/bin/virtualenvwrapper.sh ]; then
     source /usr/bin/virtualenvwrapper_lazy.sh
 fi
 
+# Open new terminals in the same directory as the current terminal.
+if [ -f /etc/profile.d/vte.sh ]; then
+    source /etc/profile.d/vte.sh
+fi
+
 # Don't use cowsay with ansible
 export ANSIBLE_NOCOWS=1
 
