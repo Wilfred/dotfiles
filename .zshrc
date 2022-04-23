@@ -32,6 +32,9 @@ if [ -f /usr/share/fzf/key-bindings.zsh ]; then
     source /usr/share/fzf/completion.zsh
 fi
 
+export FZF_DEFAULT_OPTS='--layout=reverse --exact --border'
+export FZF_DEFAULT_COMMAND='rg --files'
+
 source ~/.zsh-autosuggestions.zsh
 
 source ~/.zsh-history-substring-search.zsh
