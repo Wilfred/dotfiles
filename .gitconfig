@@ -74,6 +74,7 @@
 	enabled = true
 [advice]
 	statusHints = false
+	detachedHead = false
 [gc]
 	pruneExpire = 60 days
 [status]
