@@ -61,7 +61,7 @@ setopt interactivecomments
 
 export PATH=~/bin:$PATH
 export PATH=$PATH:~/.cabal/bin:~/.cask/bin
-export PATH=$PATH:/usr/local/heroku/bin
+
 export PATH="$PATH":~/.gem/ruby/3.0.0/bin
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/home/wilfred/.evm/bin:$PATH"
