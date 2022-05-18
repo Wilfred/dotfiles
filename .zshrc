@@ -45,6 +45,9 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
+source ~/.zsh-histdb/sqlite-history.zsh
+autoload -Uz add-zsh-hook
+
 # allow 'foo' instead of 'cd foo'.
 setopt auto_cd
 
