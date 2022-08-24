@@ -2,7 +2,11 @@ alias ls='ls -GF --color=auto'
 
 # http://stackoverflow.com/a/2534676
 autoload -U colors && colors
-PS1="%{$fg[yellow]%}%~ "$'\n'"$ %{$reset_color%}%"
+
+# E.g.
+#   mybox /tmp/foo
+#   $
+PS1="%{$fg[yellow]%}"$(hostname -s)" %~ "$'\n'"$ %{$reset_color%}%"
 
 # tab completion
 autoload -Uz compinit && compinit
