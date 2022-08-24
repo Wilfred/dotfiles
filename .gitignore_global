@@ -4,3 +4,4 @@ cscope.*
 .tramp_history
 .agignore
 .hypothesis
+.DS_Store
