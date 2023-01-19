@@ -20,6 +20,12 @@
         # List Worktrees.
         lw = "!f() { git worktree prune && git worktree list; }; f"
 
+        # Difftastic diff of most recent commit.
+        dp = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff -n 1; }; f"
+
+        # Difftastic log of commits.
+        dlog = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff; }; f"
+
         # Previous commit
         prev = checkout HEAD~
 
