@@ -77,6 +77,10 @@ setopt EXTENDED_HISTORY        # save timestamp and runtime information
 # allow bash-style # comments
 setopt interactivecomments
 
+# If we run a command that's already in the history, remove the old version.
+# This means we can't necessarily replay history, but avoids duplicates.
+setopt histignorealldups
+
 export PATH=~/bin:$PATH
 export PATH=$PATH:~/.cabal/bin:~/.cask/bin
 
