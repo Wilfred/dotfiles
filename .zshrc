@@ -63,8 +63,7 @@ bindkey '^[[B' history-substring-search-down
 source ~/.zsh-histdb/sqlite-history.zsh
 autoload -Uz add-zsh-hook
 
-# allow 'foo' instead of 'cd foo'.
-setopt auto_cd
+alias ..='cd ..'
 
 ## History
 HISTFILE=$HOME/.zhistory       # enable history saving on shell exit
