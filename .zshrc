@@ -46,7 +46,7 @@ if [ -f /usr/share/fzf/key-bindings.zsh ]; then
     source /usr/share/fzf/key-bindings.zsh
     source /usr/share/fzf/completion.zsh
 fi
-export FZF_CTRL_R_OPTS="--prompt '> ' --with-nth 2.."
+export FZF_CTRL_R_OPTS="--with-nth 2.."
 
 export FZF_DEFAULT_OPTS='--layout=reverse --exact'
 export FZF_DEFAULT_COMMAND='rg --files'
