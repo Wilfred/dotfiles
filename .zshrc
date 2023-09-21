@@ -17,7 +17,7 @@ prompt_color="${my_colors[$my_colors_index_zsh]}"
 # E.g.
 #   mybox /tmp/foo
 #   $
-PS1=$'\n'"%{$prompt_color%}"$(hostname -s)" %~ "$'\n'"$ %{$reset_color%}%"
+PS1=$'\n'"%{$prompt_color%}"$(hostname -s)" %~ %(?..exit:%? ) "$'\n'"$ %{$reset_color%}%"
 
 # tab completion
 autoload -Uz compinit && compinit
