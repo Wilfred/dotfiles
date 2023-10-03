@@ -84,7 +84,10 @@ setopt interactivecomments
 setopt histignorealldups
 
 export PATH=~/bin:$PATH
-export PATH=$PATH:~/.cabal/bin:~/.cask/bin
+export PATH=$PATH:~/.cabal/bin
+
+# Cask installs to ~/.local/bin.
+export PATH=$PATH:~/.local/bin
 
 export PATH="$PATH":~/.gem/ruby/3.0.0/bin
 export PATH="$HOME/.cargo/bin:$PATH"
