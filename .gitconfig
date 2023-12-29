@@ -92,8 +92,6 @@
 	conflictStyle = diff3
 [include]
         path = ~/.gitconfig.private
-[pull]
-	ff = only
 [init]
 	defaultBranch = main
 
