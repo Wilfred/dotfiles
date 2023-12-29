@@ -24,7 +24,7 @@
         dp = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff -n 1; }; f"
 
         # Difftastic log of commits.
-        dlog = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff; }; f"
+        dlog = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
 
         # Difftastic show.
         dshow = "!f() { GIT_EXTERNAL_DIFF=difft git show --ext-diff $1; }; f"
