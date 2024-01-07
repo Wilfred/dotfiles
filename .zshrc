@@ -182,6 +182,13 @@ ndir() {
     mkdir $1 && cd $1
 }
 
+# 'git root'
+grt() {
+    # https://stackoverflow.com/questions/957928/is-there-a-way-to-get-the-git-root-directory-in-one-command/38852055#38852055
+    local r
+    r=$(git rev-parse --git-dir) && r=$(cd "$r" && pwd)/ && cd "${r%%/.git/*}"
+}
+
 gco() {
   local tags branches target
   branches=$(
