@@ -138,7 +138,7 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 # Support ANSI color sequences, truncate lines (don't wrap), and use
 # smart case search (rather than case sensitive).
 # https://stackoverflow.com/a/26069/509706
-export LESS=-RSI
+export LESS=-RSi
 
 # share history between terminals, from http://askubuntu.com/q/23630
 setopt inc_append_history
