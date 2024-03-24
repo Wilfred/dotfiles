@@ -155,10 +155,14 @@ if [ -f /usr/bin/virtualenvwrapper.sh ]; then
     source /usr/bin/virtualenvwrapper_lazy.sh
 fi
 
-# Open new terminals in the same directory as the current terminal.
-if [ -f /etc/profile.d/vte.sh ]; then
-    source /etc/profile.d/vte.sh
-fi
+# Disabled: seems to be appending a literal %{ to PS1.
+#
+# No obvious related bug reports upstream: https://gitlab.gnome.org/GNOME/vte/
+#
+# # Open new terminals in the same directory as the current terminal.
+# if [ -f /etc/profile.d/vte.sh ]; then
+#     source /etc/profile.d/vte.sh
+# fi
 
 # Don't use cowsay with ansible
 export ANSIBLE_NOCOWS=1
