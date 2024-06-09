@@ -4,7 +4,7 @@ alias ls='ls -GF --color=auto'
 autoload -U colors && colors
 
 my_colors=("$fg_bold[red]" "$fg_bold[blue]" "$fg_bold[green]" "$fg_bold[cyan]" "$fg_bold[yellow]" "$fg_bold[magenta]")
-hostname=$(hostname -s)
+hostname=$(uname -n)
 
 # Choose a color based on the length of the hostname, so the color is
 # usually unique to the machine.
@@ -17,7 +17,7 @@ prompt_color="${my_colors[$my_colors_index_zsh]}"
 # E.g.
 #   mybox /tmp/foo
 #   $
-PS1=$'\n'"%{$prompt_color%}"$(hostname -s)" %~ %(?..exit:%? ) "$'\n'"$ %{$reset_color%}%"
+PS1=$'\n'"%{$prompt_color%}"$(uname -n)" %~ %(?..exit:%? ) "$'\n'"$ %{$reset_color%}%"
 
 # tab completion
 autoload -Uz compinit && compinit
