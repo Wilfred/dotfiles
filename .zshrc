@@ -183,8 +183,8 @@ mcd() {
     mkdir $1 && cd $1
 }
 
-# 'git root'
-grt() {
+# CD to Git root.
+cdg() {
     # https://stackoverflow.com/questions/957928/is-there-a-way-to-get-the-git-root-directory-in-one-command/38852055#38852055
     local r
     r=$(git rev-parse --git-dir) && r=$(cd "$r" && pwd)/ && cd "${r%%/.git/*}"
