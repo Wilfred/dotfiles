@@ -5,3 +5,4 @@ cscope.*
 .agignore
 .hypothesis
 .DS_Store
+.gdb_history
