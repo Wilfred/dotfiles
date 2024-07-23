@@ -3,6 +3,16 @@ alias ls='ls -GF --color=auto'
 # http://stackoverflow.com/a/2534676
 autoload -U colors && colors
 
+# Buggy: seems to be appending a literal %{ to PS1 if PS1 is set. Make
+# sure we do this before PS1 configuration.
+#
+# No obvious related bug reports upstream: https://gitlab.gnome.org/GNOME/vte/
+#
+# # Open new terminals in the same directory as the current terminal.
+if [ -f /etc/profile.d/vte.sh ]; then
+    source /etc/profile.d/vte.sh
+fi
+
 my_colors=("$fg_bold[red]" "$fg_bold[blue]" "$fg_bold[green]" "$fg_bold[cyan]" "$fg_bold[yellow]" "$fg_bold[magenta]")
 hostname=$(uname -n)
 
@@ -151,15 +161,6 @@ if [ -f /usr/bin/virtualenvwrapper.sh ]; then
     export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
     source /usr/bin/virtualenvwrapper_lazy.sh
 fi
-
-# Disabled: seems to be appending a literal %{ to PS1.
-#
-# No obvious related bug reports upstream: https://gitlab.gnome.org/GNOME/vte/
-#
-# # Open new terminals in the same directory as the current terminal.
-# if [ -f /etc/profile.d/vte.sh ]; then
-#     source /etc/profile.d/vte.sh
-# fi
 
 # Don't use cowsay with ansible
 export ANSIBLE_NOCOWS=1
