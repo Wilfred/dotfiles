@@ -3,11 +3,6 @@ alias ls='ls -GF --color=auto'
 # http://stackoverflow.com/a/2534676
 autoload -U colors && colors
 
-# Buggy: seems to be appending a literal %{ to PS1 if PS1 is set. Make
-# sure we do this before PS1 configuration.
-#
-# No obvious related bug reports upstream: https://gitlab.gnome.org/GNOME/vte/
-#
 # # Open new terminals in the same directory as the current terminal.
 if [ -f /etc/profile.d/vte.sh ]; then
     source /etc/profile.d/vte.sh
@@ -27,7 +22,7 @@ prompt_color="${my_colors[$my_colors_index_zsh]}"
 # E.g.
 #   mybox /tmp/foo
 #   $
-PS1=$'\n'"%{$prompt_color%}"$(uname -n)" %~ %(?..exit:%? ) "$'\n'"$ %{$reset_color%}%"
+PS1=$'\n'"%{$prompt_color%}"$(uname -n)" %~ %(?..exit:%? ) "$'\n'"$ %{$reset_color%}"
 
 # tab completion
 autoload -Uz compinit && compinit
