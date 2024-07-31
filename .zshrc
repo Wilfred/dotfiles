@@ -60,8 +60,9 @@ export FZF_CTRL_R_OPTS="--with-nth 2.."
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}'"
 
 # Exact matches by default, and show the result at the top rather than
-# the bottom.
-export FZF_DEFAULT_OPTS='--layout=reverse --exact'
+# the bottom. Show the result count on the right, on the same line as
+# the prompt.
+export FZF_DEFAULT_OPTS='--layout=reverse --exact --info=inline-right'
 
 export FZF_DEFAULT_COMMAND='rg --files'
 
