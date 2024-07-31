@@ -48,8 +48,8 @@ if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; 
 fi
 
 if [ -f /usr/share/fzf/key-bindings.zsh ]; then
-    source /usr/share/fzf/key-bindings.zsh
-    source /usr/share/fzf/completion.zsh
+    # Set up fzf key bindings and fuzzy completion.
+    source <(fzf --zsh)
 fi
 
 # Don't show the command number in history, just the command itself.
