@@ -55,6 +55,10 @@ fi
 # Don't show the command number in history, just the command itself.
 export FZF_CTRL_R_OPTS="--with-nth 2.."
 
+# Show a file preview when doing ctrl-t, using bat.
+# https://github.com/junegunn/fzf#key-bindings-for-command-line
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}'"
+
 # Exact matches by default, and show the result at the top rather than
 # the bottom.
 export FZF_DEFAULT_OPTS='--layout=reverse --exact'
