@@ -29,6 +29,8 @@
         # Difftastic show.
         dshow = "!f() { : git show ; GIT_EXTERNAL_DIFF=difft git show --ext-diff $1; }; f"
 
+        discard = reset --hard
+
         # Previous commit
         prev = checkout HEAD~
 
