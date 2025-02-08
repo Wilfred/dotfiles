@@ -1,3 +1,6 @@
 [user]
 name = "Wilfred Hughes"
 email = "me@wilfred.me.uk"
+
+[ui]
+diff.tool = ["difft", "--color=always", "$left", "$right"]
