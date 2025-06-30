@@ -6,3 +6,5 @@ cscope.*
 .hypothesis
 .DS_Store
 .gdb_history
+
+rustc-ice-*.txt
