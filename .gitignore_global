@@ -8,3 +8,5 @@ cscope.*
 .gdb_history
 
 rustc-ice-*.txt
+
+.aider.*
