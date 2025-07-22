@@ -47,7 +47,7 @@ if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; 
     source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
-if [ -f /usr/share/fzf/key-bindings.zsh ]; then
+if command -v fzf >/dev/null 2>&1; then
     # Set up fzf key bindings and fuzzy completion.
     source <(fzf --zsh)
 fi
