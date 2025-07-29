@@ -184,6 +184,8 @@ export NINJA_STATUS="[done:%f doing:%r left:%u elapsed:%e] "
 setopt AUTO_PUSHD
 zstyle ':completion:*:directory-stack' list-colors '=(#b) #([0-9]#)*( *)==95=38;5;12'
 
+alias .j='just --justfile ~/.user.justfile --working-directory .'
+
 # Make a directory and CD into it.
 mcd() {
     mkdir $1 && cd $1
@@ -210,3 +212,6 @@ gco() {
         --ansi --preview="git --no-pager log -150 --pretty=format:%s '..{2}'") || return
   git checkout $(awk '{print $2}' <<<"$target" )
 }
+
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+
