@@ -11,9 +11,19 @@ fi
 my_colors=("$fg_bold[red]" "$fg_bold[blue]" "$fg_bold[green]" "$fg_bold[cyan]" "$fg_bold[yellow]" "$fg_bold[magenta]")
 hostname=$(uname -n)
 
-# Choose a color based on the length of the hostname, so the color is
+if command -v md5sum >/dev/null; then
+    # Truncate the md5sum using mod 1000, so we don't hit zsh integer
+    # size limits. That's plenty for our needs.
+    hostname_hash=$(echo -n "$hostname" | md5sum | cut -d' ' -f1 | python3 -c "print(int(input(), 16) % 1000)")
+else
+    # md5sum isn't available (e.g. macOS prefers md5 binary), so just
+    # use the string length of the hostname.
+    hostname_hash=${#hostname}
+fi
+
+# Choose a color based on the hash of the hostname, so the color is
 # usually unique to the machine.
-my_colors_index=$((${#hostname} % ${#my_colors[@]}))
+my_colors_index=$(($hostname_hash % ${#my_colors[@]}))
 # zsh arrays are 1-indexed.
 my_colors_index_zsh=$(($my_colors_index+1))
 
