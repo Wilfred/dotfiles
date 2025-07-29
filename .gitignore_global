@@ -10,3 +10,4 @@ cscope.*
 rustc-ice-*.txt
 
 .aider.*
+.claude
