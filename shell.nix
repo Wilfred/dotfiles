@@ -29,5 +29,10 @@ pkgs.mkShellNoCC {
     zoxide
     # Fast text search.
     ripgrep
+    # Linter for shell scripts.
+    shellcheck
+
+    # Dev tooling
+    nodejs_24 # for npm
   ];
 }
