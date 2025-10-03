@@ -2,16 +2,21 @@
 
 ## All Platforms
 
+bat
+difftastic
 emacs
 fzf
-difftastic (and rustup if necessary)
+jq
 vlc
 gimp
 nano
+rustup
 zile
+zoxide
 
 ## macOS
 
 homebrew
 maccy
 rectangle
+iterm2
