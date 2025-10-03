@@ -25,4 +25,3 @@ extdiff =
 
 [extdiff]
 cmd.dft = difft
-opts.dft = --missing-as-empty
