@@ -5,6 +5,7 @@
 bat
 difftastic
 emacs
+fd
 fzf
 jq
 vlc
