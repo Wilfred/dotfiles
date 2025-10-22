@@ -197,7 +197,7 @@ zstyle ':completion:*:directory-stack' list-colors '=(#b) #([0-9]#)*( *)==95=38;
 alias .j='just --justfile ~/.user.justfile --working-directory .'
 
 # Make a directory and CD into it.
-mcd() {
+mkcd() {
     mkdir $1 && cd $1
 }
 
