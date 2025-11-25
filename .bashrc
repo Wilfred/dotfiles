@@ -18,3 +18,4 @@ alias docker-stop-all='docker stop $(docker ps -a -q)'
 alias docker-rm-all='docker rm $(docker ps -a -q)'
 
 
+. "$HOME/.cargo/env"

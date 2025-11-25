@@ -6,7 +6,11 @@
 	excludesfile = ~/.gitignore_global
 [user]
 	name = Wilfred Hughes
-	email = me@wilfred.me.uk
+	email = wilfred@meta.com
+
+[http "https://git.c2p.facebook.net"]
+	sslCert = /var/facebook/credentials/wilfred/x509/wilfred.pem
+
 [alias]
         b = branch
         # 'New Branch'

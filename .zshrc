@@ -225,3 +225,45 @@ gco() {
 
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 
+alias cds='cd ~/fbsource/'
+alias cdc='cd ~/fbsource/fbcode'
+alias cdh='cd ~/fbsource/fbcode/hphp/hack/'
+alias cdv='cd ~/fbsource/xplat/vscode'
+alias cdw='cd ~/www'
+
+export DFT_OVERRIDE='*.sky:python'
+export DFT_OVERRIDE_1='*.td:python'
+export DFT_OVERRIDE_2='*.bxl:python'
+export DFT_OVERRIDE_3='*.cconf:python'
+export DFT_OVERRIDE_4='*.materialized_JSON:json'
+export DFT_OVERRIDE_5='*.cinc:python'
+
+function reb() {
+  hg rebase -s $1 -d . && hg next --newest
+}
+
+# Update to warm
+alias upw='hg pull && hg up remote/fbcode/warm'
+
+# Go 'to warm', but don't pull.
+alias tow='hg up remote/fbcode/warm'
+
+# Update to master
+alias upm='hg pull && hg up remote/master'
+
+# Super useful to switch between commits.
+alias up=hg-sl-up
+
+# Next mercurial commit, prefererring newer (i.e. feature branches)
+alias hn='hg next --newest'
+
+# Buck Output
+bo() {
+  buck build --show-output "$@"
+}
+
+# Buck query
+bq() {
+  buck uquery --output-all-attributes "$@" > query.json
+  echo 'Wrote query.json'
+}
