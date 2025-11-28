@@ -12,6 +12,7 @@
 	sslCert = /var/facebook/credentials/wilfred/x509/wilfred.pem
 
 [alias]
+        st = status
         b = branch
         # 'New Branch'
         nb = checkout -b
