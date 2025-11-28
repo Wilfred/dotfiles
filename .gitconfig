@@ -8,6 +8,7 @@
 	name = Wilfred Hughes
 	email = me@wilfred.me.uk
 [alias]
+        st = status
         b = branch
         # 'New Branch'
         nb = checkout -b
