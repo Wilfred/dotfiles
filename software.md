@@ -21,3 +21,12 @@ homebrew
 maccy
 rectangle
 iterm2
+
+alfred
+dash
+
+## Chrome extensions
+
+vertical tabs https://chromewebstore.google.com/detail/vertical-tabs/efobhjmgoddhfdhaflheioeagkcknoji
+
+
