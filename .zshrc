@@ -141,8 +141,6 @@ alias compile='gcc -Wall -Wextra -g'
 
 alias open="xdg-open"
 
-alias serve='python2 -m SimpleHTTPServer'
-
 alias apt-install="sudo apt-get install"
 apt-search () { apt-cache search $* | less }
 
