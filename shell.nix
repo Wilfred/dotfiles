@@ -34,6 +34,11 @@ pkgs.mkShellNoCC {
     # Linter for shell scripts.
     shellcheck
 
+    tldr
+
+    # For spell checking code.
+    # typos
+
     # Dev tooling
     nodejs_24 # for npm
   ];
