@@ -55,7 +55,10 @@
         ls-merged = "!git branch --merged"
         rename-branch = branch -m
         delete-branch = "!f() { echo "Deleting remote branch:"; git push origin --delete $1; echo "Deleting local branch:"; git branch -d $1; }; f"
-        co = !git checkout $(git branch --sort=-committerdate | fzf --height=20% --reverse --info=inline)
+        # Immediately switch to the branch if the substring is unique.
+        co = !git-fuzzy
+        # Load a fuzzy-finder.
+        coo = !git checkout $(git branch --sort=-committerdate | fzf --height=20% --reverse --info=inline)
         up = merge @{u} --ff-only
 
 [color]
