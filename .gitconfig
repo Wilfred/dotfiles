@@ -22,10 +22,19 @@
         lw = "!f() { git worktree prune && git worktree list; }; f"
 
         # Difftastic diff of most recent commit.
-        dp = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff -n 1; }; f"
+        dp = -c diff.external=difft show --ext-diff
 
-        # Difftastic log of commits.
-        dlog = "!f() { : git log ; GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
+        # Difftastic aliases, so `git dlog` is `git log` with difftastic and so on.
+        dlog = -c diff.external=difft log --ext-diff
+        dshow = -c diff.external=difft show --ext-diff
+        ddiff = -c diff.external=difft diff
+
+        # `git log` with patches shown with difftastic.
+        dl = -c diff.external=difft log -p --ext-diff
+        # Show the most recent commit with difftastic.
+        ds = -c diff.external=difft show --ext-diff
+        # `git diff` with difftastic.
+        dft = -c diff.external=difft diff
 
         # Difftastic show.
         dshow = "!f() { : git show ; GIT_EXTERNAL_DIFF=difft git show --ext-diff $1; }; f"
@@ -48,8 +57,6 @@
         delete-branch = "!f() { echo "Deleting remote branch:"; git push origin --delete $1; echo "Deleting local branch:"; git branch -d $1; }; f"
         co = !git checkout $(git branch --sort=-committerdate | fzf --height=20% --reverse --info=inline)
         up = merge @{u} --ff-only
-
-        dft = difftool
 
 [color]
         branch = auto
