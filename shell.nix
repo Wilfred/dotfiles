@@ -1,6 +1,8 @@
 # Start a session with these binaries on path with:
 #
 # $ nix-shell --run zsh
+#
+# alternatively install direnv and nix-direnv.
 
 let
   nixpkgs = fetchTarball "https://github.com/NixOS/nixpkgs/tarball/nixos-25.05";
