@@ -1,5 +1,7 @@
 alias ls='ls -GF --color=auto'
 
+# Provides fg, fb_bold, fb_no_bold (foreground),
+# and bg, bg_bold, bg_no_bold (background).
 # http://stackoverflow.com/a/2534676
 autoload -U colors && colors
 
@@ -8,7 +10,7 @@ if [ -f /etc/profile.d/vte.sh ]; then
     source /etc/profile.d/vte.sh
 fi
 
-my_colors=("$fg_bold[red]" "$fg_bold[blue]" "$fg_bold[green]" "$fg_bold[cyan]" "$fg_bold[yellow]" "$fg_bold[magenta]")
+my_colors=("$fg_bold[red]" "$fg_bold[blue]" "$fg_bold[green]" "$fg_bold[cyan]" "$fg_bold[yellow]" "$fg_bold[magenta]" "fg_bold[white]")
 hostname=$(uname -n)
 
 if command -v md5sum >/dev/null; then
