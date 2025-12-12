@@ -15,6 +15,8 @@ rustup
 zile
 zoxide
 
+actionlint # for checking github actions
+
 ## macOS
 
 homebrew
