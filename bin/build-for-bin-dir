@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+# Build the Rust project in the working directory and copy the output
+# binary to ~/bin.
+
+set -euo pipefail
+
+# Check if we're in a Rust project
+if [[ ! -f "Cargo.toml" ]]; then
+    echo "Error: Cargo.toml not found in current directory"
+    exit 1
+fi
+
+cargo build --release
+
+# Get binary targets from cargo metadata
+BINARIES=$(cargo metadata --no-deps --format-version 1 | jq -r '.packages[0].targets[] | select(.kind[] == "bin") | .name')
+
+if [[ -z "$BINARIES" ]]; then
+    echo "Error: No binary targets found in this crate"
+    echo "This might be a library crate with no binary target"
+    exit 1
+fi
+
+BINARY_COUNT=$(echo "$BINARIES" | wc -l)
+if [[ $BINARY_COUNT -gt 1 ]]; then
+    echo "Found multiple binaries:"
+    echo "$BINARIES"
+    echo ""
+    echo "Error: Multiple binary targets found. Please specify which one to install."
+    exit 1
+fi
+
+BINARY_NAME="$BINARIES"
+
+# Check if the binary exists
+BINARY_PATH="target/release/$BINARY_NAME"
+if [[ ! -f "$BINARY_PATH" ]]; then
+    echo "Error: Binary not found at $BINARY_PATH"
+    exit 1
+fi
+
+# Create ~/bin if it doesn't exist
+mkdir -p ~/bin
+
+# Copy binary to ~/bin
+echo "Installing $BINARY_NAME to ~/bin"
+cp -f "$BINARY_PATH" ~/bin/
