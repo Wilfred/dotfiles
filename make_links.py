@@ -70,10 +70,24 @@ if __name__ == '__main__':
     for file_name in get_configuration_file_names(dotfiles_path):
         source_path = os.path.join(dotfiles_path, file_name)
         target_path = os.path.join(home_path, file_name)
-        
+
         try:
             create_symlink(source_path, target_path, overwrite)
             print("Linking %s to %s" % (source_path, target_path))
+        except FileExists:
+            print("There is already a file at %s, skipping." % target_path)
+
+    # Symlink files from bin directory to ~/bin
+    bin_source_dir = os.path.join(dotfiles_path, 'bin')
+    bin_target_dir = os.path.join(home_path, 'bin')
+
+    for file_name in os.listdir(bin_source_dir):
+        source_path = os.path.join(bin_source_dir, file_name)
+        target_path = os.path.join(bin_target_dir, file_name)
+
+        try:
+            create_symlink(source_path, target_path, overwrite)
+            print("Linking bin %s to %s" % (source_path, target_path))
         except FileExists:
             print("There is already a file at %s, skipping." % target_path)
 
