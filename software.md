@@ -8,6 +8,7 @@ emacs
 fd
 fzf
 jq
+ncdu
 vlc
 gimp
 nano
