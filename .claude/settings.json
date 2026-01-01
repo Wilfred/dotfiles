@@ -4,5 +4,29 @@
       "Bash(rm:*)"
     ],
     "defaultMode": "acceptEdits"
+  },
+  "hooks": {
+    "PermissionRequest": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "notify-send 'ClaudeCode' 'Waiting on permissions' --icon=dialog-question"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "notify-send 'ClaudeCode' 'Prompt has finished!' --icon=info"
+          }
+        ]
+      }
+    ]
   }
 }
