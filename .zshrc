@@ -160,14 +160,13 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 # -R: Support ANSI color sequences
 # -S: truncate lines (don't wrap)
 # -i: Smart case search (rather than case sensitive)
-# -c: Always render content at the top of the window
 # -x4: Tabs as 4 spaces
 # --use-color: Use colours for UI elements
 # -P?f%f:STDIN.?pB - %pB\%:\.\.\..: Show both percentage and filename at bottom.
 #
 # https://stackoverflow.com/a/26069/509706
 # https://lobste.rs/s/lrx8vc/assorted_less_1_tips
-export LESS='-RSic -x4 --use-color -P?f%f:STDIN.?pB - %pB\%:\.\.\..'
+export LESS='-RSi -x4 --use-color -P?f%f:STDIN.?pB - %pB\%:\.\.\..'
 
 # share history between terminals, from http://askubuntu.com/q/23630
 setopt inc_append_history
