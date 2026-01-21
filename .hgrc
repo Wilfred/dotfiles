@@ -25,3 +25,7 @@ extdiff =
 
 [extdiff]
 cmd.dft = difft
+
+[alias]
+dp = dft -r .^ -r .
+fls = fsl
