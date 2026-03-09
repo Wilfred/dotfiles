@@ -17,16 +17,6 @@
         ]
       }
     ],
-    "Stop": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "notify-send 'ClaudeCode' 'Prompt has finished!' --icon=info"
-          }
-        ]
-      }
-    ]
+    "Stop": []
   }
 }
