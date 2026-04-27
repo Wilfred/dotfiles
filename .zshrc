@@ -141,7 +141,10 @@ alias gdb="gdb -q"
 # quick and dirty compile alias
 alias compile='gcc -Wall -Wextra -g'
 
-alias open="xdg-open"
+# Alias open on Linux, but not on macOS.
+if command -v xdg-open >/dev/null 2>&1; then
+    alias open="xdg-open"
+fi
 
 alias apt-install="sudo apt-get install"
 apt-search () { apt-cache search $* | less }
