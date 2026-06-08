@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Revert files to their state before the last commit.
+
+set -euo pipefail
+
+if [ "$#" -eq 0 ]; then
+    echo "Usage: vc-revert-file <file> [file ...]" >&2
+    exit 1
+fi
+
+vcs=
+
+if git rev-parse --show-toplevel >/dev/null 2>&1; then
+    vcs=git
+elif command -v sl >/dev/null 2>&1 && sl root >/dev/null 2>&1; then
+    vcs=sl
+elif command -v hg >/dev/null 2>&1 && hg root >/dev/null 2>&1; then
+    vcs=hg
+else
+    echo "Error: not in a Git, Mercurial, or Sapling repository" >&2
+    exit 1
+fi
+
+case "$vcs" in
+    git)
+        git restore --source=HEAD^ --worktree -- "$@"
+        ;;
+    sl)
+        sl revert -r .^ -- "$@"
+        ;;
+    hg)
+        hg revert -r .^ -- "$@"
+        ;;
+    *)
+        echo "Error: unsupported VCS: $vcs" >&2
+        exit 1
+        ;;
+esac
