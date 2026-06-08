@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Remove untracked files and directories from the current repository.
+# Works with Git, Mercurial, and Sapling.
+
+set -euo pipefail
+
+vcs=
+root=
+
+if root=$(git rev-parse --show-toplevel 2>/dev/null); then
+    vcs=git
+elif command -v sl >/dev/null 2>&1 && root=$(sl root 2>/dev/null); then
+    vcs=sl
+elif command -v hg >/dev/null 2>&1 && root=$(hg root 2>/dev/null); then
+    vcs=hg
+else
+    echo "Error: not in a Git, Mercurial, or Sapling repository" >&2
+    exit 1
+fi
+
+case "$vcs" in
+    git)
+        git -C "$root" clean -fd
+        ;;
+    sl)
+        sl --cwd "$root" clean --files --dirs
+        ;;
+    hg)
+        hg --cwd "$root" clean --files --dirs
+        ;;
+    *)
+        echo "Error: unsupported VCS: $vcs" >&2
+        exit 1
+        ;;
+esac
