@@ -92,7 +92,9 @@ if [ -f ~/.zsh-history-substring-search.zsh ]; then
     bindkey '^[[B' history-substring-search-down
 fi
 
-source ~/.zsh-histdb/sqlite-history.zsh
+if [ -f ~/.zsh-histdb/sqlite-history.zsh ]; then
+    source ~/.zsh-histdb/sqlite-history.zsh
+fi
 autoload -Uz add-zsh-hook
 
 alias ..='cd ..'
