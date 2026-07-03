@@ -78,17 +78,23 @@ export FZF_DEFAULT_OPTS='--layout=reverse --exact --info=inline-right'
 
 export FZF_DEFAULT_COMMAND='rg --files'
 
-source ~/.zsh-autosuggestions.zsh
+if [ -f ~/.zsh-autosuggestions.zsh ]; then
+    source ~/.zsh-autosuggestions.zsh
+fi
 
-source ~/.zsh-history-substring-search.zsh
-zmodload zsh/terminfo
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+if [ -f ~/.zsh-history-substring-search.zsh ]; then
+    source ~/.zsh-history-substring-search.zsh
+    zmodload zsh/terminfo
+    bindkey "$terminfo[kcuu1]" history-substring-search-up
+    bindkey "$terminfo[kcud1]" history-substring-search-down
 
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+    bindkey '^[[A' history-substring-search-up
+    bindkey '^[[B' history-substring-search-down
+fi
 
-source ~/.zsh-histdb/sqlite-history.zsh
+if [ -f ~/.zsh-histdb/sqlite-history.zsh ]; then
+    source ~/.zsh-histdb/sqlite-history.zsh
+fi
 autoload -Uz add-zsh-hook
 
 alias ..='cd ..'
