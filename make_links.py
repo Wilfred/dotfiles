@@ -9,18 +9,23 @@ class FileExists(OSError):
 
 
 def create_symlink(source_path, target, overwrite=False):
+    if os.path.islink(target) and os.readlink(target) == source_path:
+        raise FileExists("already linked")
+
     if os.path.exists(target):
         if overwrite:
             os.unlink(target)
+        elif os.path.islink(target):
+            raise FileExists("skipped, symlink to %s" % os.readlink(target))
         else:
-            raise FileExists()
+            raise FileExists("skipped, plain file")
 
     elif os.path.islink(target):
         # It's a broken symlink.
         if overwrite:
             os.unlink(target)
         else:
-            raise FileExists("Broken symlink exists")
+            raise FileExists("skipped, broken symlink")
 
     target_parent = os.path.dirname(target)
     if not os.path.exists(target_parent):
@@ -75,9 +80,9 @@ if __name__ == "__main__":
 
         try:
             create_symlink(source_path, target_path, overwrite)
-            print("Linking %s to %s" % (source_path, target_path))
-        except FileExists:
-            print("There is already a file at %s, skipping." % target_path)
+            print("%s: linked" % target_path)
+        except FileExists as e:
+            print("%s: %s" % (target_path, e))
 
     # Symlink files from bin directory to ~/bin
     bin_source_dir = os.path.join(dotfiles_path, "bin")
@@ -89,6 +94,6 @@ if __name__ == "__main__":
 
         try:
             create_symlink(source_path, target_path, overwrite)
-            print("Linking bin %s to %s" % (source_path, target_path))
-        except FileExists:
-            print("There is already a file at %s, skipping." % target_path)
+            print("%s: linked" % target_path)
+        except FileExists as e:
+            print("%s: %s" % (target_path, e))
