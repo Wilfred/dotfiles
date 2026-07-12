@@ -4,7 +4,9 @@ import os
 import sys
 
 
-class FileExists(OSError): pass
+class FileExists(OSError):
+    pass
+
 
 def create_symlink(source_path, target, overwrite=False):
     if os.path.exists(target):
@@ -29,16 +31,16 @@ def create_symlink(source_path, target, overwrite=False):
 
 def is_configuration_file(path):
     file_name = os.path.basename(path)
-    
+
     # skip .git files specific to the repo
-    if file_name in ['.git', '.gitignore']:
+    if file_name in [".git", ".gitignore"]:
         return False
 
     # emacs backup files
-    if file_name.startswith('.#'):
+    if file_name.startswith(".#"):
         return False
-    
-    if file_name.startswith('.'):
+
+    if file_name.startswith("."):
         return True
 
     return False
@@ -47,7 +49,7 @@ def is_configuration_file(path):
 def get_configuration_file_names(path):
     for file_name in os.listdir(path):
         absolute_path = os.path.join(path, file_name)
-        
+
         if is_configuration_file(absolute_path):
 
             if os.path.isdir(absolute_path):
@@ -57,14 +59,14 @@ def get_configuration_file_names(path):
                 yield file_name
 
 
-if __name__ == '__main__':
-    home_path = os.path.expanduser('~')
+if __name__ == "__main__":
+    home_path = os.path.expanduser("~")
 
     script_path = os.path.realpath(__file__)
     dotfiles_path = os.path.dirname(script_path)
 
     overwrite = False
-    if '--force' in sys.argv:
+    if "--force" in sys.argv:
         overwrite = True
 
     for file_name in get_configuration_file_names(dotfiles_path):
@@ -78,8 +80,8 @@ if __name__ == '__main__':
             print("There is already a file at %s, skipping." % target_path)
 
     # Symlink files from bin directory to ~/bin
-    bin_source_dir = os.path.join(dotfiles_path, 'bin')
-    bin_target_dir = os.path.join(home_path, 'bin')
+    bin_source_dir = os.path.join(dotfiles_path, "bin")
+    bin_target_dir = os.path.join(home_path, "bin")
 
     for file_name in os.listdir(bin_source_dir):
         source_path = os.path.join(bin_source_dir, file_name)
@@ -90,5 +92,3 @@ if __name__ == '__main__':
             print("Linking bin %s to %s" % (source_path, target_path))
         except FileExists:
             print("There is already a file at %s, skipping." % target_path)
-
-
