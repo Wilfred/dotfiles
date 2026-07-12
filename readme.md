@@ -12,8 +12,8 @@ Grab the repo, then run make_links.py.
     $ git clone git://github.com/Wilfred/dotfiles.git
     $ cd dotfiles
     $ ./make_links.py
-    Linking /home/wilfred/dotfiles/.gitconfig to /home/wilfred/.gitconfig
-    Linking /home/wilfred/dotfiles/.zshrc to /home/wilfred/.zshrc
+    /home/wilfred/.gitconfig: linked
+    /home/wilfred/.zshrc: linked
     
 If you have old configuration you want to wipe, pass `--force` to make_links:
 
