@@ -131,7 +131,11 @@ export PATH="/home/wilfred/.evm/bin:$PATH"
 export NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 
-export EDITOR=zile
+if command -v zile >/dev/null 2>&1; then
+  export EDITOR=zile
+else
+  export EDITOR=nano
+fi
 
 export MYSQL_PS1="\u@\h:mysql> "
 alias mysql-color="rlwrap --always-readline --prompt-colour=GREEN mysql"
@@ -239,4 +243,3 @@ gco() {
 }
 
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
-
