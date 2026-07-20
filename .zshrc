@@ -10,7 +10,7 @@ if [ -f /etc/profile.d/vte.sh ]; then
     source /etc/profile.d/vte.sh
 fi
 
-my_colors=("$fg_bold[red]" "$fg_bold[blue]" "$fg_bold[green]" "$fg_bold[cyan]" "$fg_bold[yellow]" "$fg_bold[magenta]" "fg_bold[white]")
+my_colors=("$fg_bold[red]" "$fg_bold[blue]" "$fg_bold[green]" "$fg_bold[cyan]" "$fg_bold[yellow]" "$fg_bold[magenta]" "$fg_bold[white]")
 hostname=$(uname -n)
 
 if command -v md5sum >/dev/null; then
