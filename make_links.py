@@ -13,6 +13,16 @@ else:
     GREEN = YELLOW = CYAN = RESET = ""
 
 
+def display_path(path):
+    """Abbreviate the user's home directory to ~ for more concise output."""
+    home_path = os.path.expanduser("~")
+    if path == home_path:
+        return "~"
+    if path.startswith(home_path + os.sep):
+        return "~" + path[len(home_path) :]
+    return path
+
+
 def colour_status(status):
     if status == "linked":
         colour = GREEN
@@ -101,9 +111,9 @@ if __name__ == "__main__":
 
         try:
             create_symlink(source_path, target_path, overwrite)
-            print("%s: %s" % (target_path, colour_status("linked")))
+            print("%s: %s" % (display_path(target_path), colour_status("linked")))
         except FileExists as e:
-            print("%s: %s" % (target_path, colour_status(str(e))))
+            print("%s: %s" % (display_path(target_path), colour_status(str(e))))
 
     # Symlink files from bin directory to ~/bin
     bin_source_dir = os.path.join(dotfiles_path, "bin")
@@ -115,6 +125,6 @@ if __name__ == "__main__":
 
         try:
             create_symlink(source_path, target_path, overwrite)
-            print("%s: %s" % (target_path, colour_status("linked")))
+            print("%s: %s" % (display_path(target_path), colour_status("linked")))
         except FileExists as e:
-            print("%s: %s" % (target_path, colour_status(str(e))))
+            print("%s: %s" % (display_path(target_path), colour_status(str(e))))
