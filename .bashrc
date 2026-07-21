@@ -8,13 +8,7 @@ shopt -s checkwinsize
 # Pressing up or down searches based on the text input so far.
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
+
 alias ..='cd ..'
+
 alias gst='git status'
-# cd to the root of a git directory.
-alias gcd='if [ "`git rev-parse --show-cdup`" != "" ]; then cd `git rev-parse --show-cdup`; fi'
-
-# Docker aliases
-alias docker-stop-all='docker stop $(docker ps -a -q)'
-alias docker-rm-all='docker rm $(docker ps -a -q)'
-
-
