@@ -3,6 +3,27 @@
 import os
 import sys
 
+# ANSI colour codes, only used when stdout is a terminal.
+if sys.stdout.isatty():
+    GREEN = "\033[32m"
+    YELLOW = "\033[33m"
+    CYAN = "\033[36m"
+    RESET = "\033[0m"
+else:
+    GREEN = YELLOW = CYAN = RESET = ""
+
+
+def colour_status(status):
+    if status == "linked":
+        colour = GREEN
+    elif status == "already linked":
+        colour = CYAN
+    else:
+        # skipped for some reason
+        colour = YELLOW
+
+    return "%s%s%s" % (colour, status, RESET)
+
 
 class FileExists(OSError):
     pass
@@ -80,9 +101,9 @@ if __name__ == "__main__":
 
         try:
             create_symlink(source_path, target_path, overwrite)
-            print("%s: linked" % target_path)
+            print("%s: %s" % (target_path, colour_status("linked")))
         except FileExists as e:
-            print("%s: %s" % (target_path, e))
+            print("%s: %s" % (target_path, colour_status(str(e))))
 
     # Symlink files from bin directory to ~/bin
     bin_source_dir = os.path.join(dotfiles_path, "bin")
@@ -94,6 +115,6 @@ if __name__ == "__main__":
 
         try:
             create_symlink(source_path, target_path, overwrite)
-            print("%s: linked" % target_path)
+            print("%s: %s" % (target_path, colour_status("linked")))
         except FileExists as e:
-            print("%s: %s" % (target_path, e))
+            print("%s: %s" % (target_path, colour_status(str(e))))
