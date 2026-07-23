@@ -97,6 +97,7 @@ alias ..='cd ..'
 ## History
 HISTFILE=$HOME/.zhistory       # enable history saving on shell exit
 setopt APPEND_HISTORY          # append rather than overwrite history file.
+setopt HIST_REDUCE_BLANKS      # trim whitespace before adding to history
 
 # History. I'm seeing roughly 500 commands per month.
 HISTSIZE=10000                 # lines of history to maintain memory
