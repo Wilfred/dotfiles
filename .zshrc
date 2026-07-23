@@ -151,10 +151,6 @@ if command -v xdg-open >/dev/null 2>&1; then
     alias open="xdg-open"
 fi
 
-alias apt-install="sudo apt-get install"
-apt-search () { apt-cache search $* | less }
-
-
 # less colours -- since man uses less as a pager, this gives us
 # coloured man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
