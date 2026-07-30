@@ -225,4 +225,7 @@ gco() {
   git checkout $(awk '{print $2}' <<<"$target" )
 }
 
+export SHAI_API_PROVIDER=codex
+alias shai='shell-ai suggest'
+
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
