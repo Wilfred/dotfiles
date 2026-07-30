@@ -181,12 +181,6 @@ if hash zoxide 2>/dev/null; then
     alias zz=zi
 fi
 
-if [ -f /usr/bin/virtualenvwrapper.sh ]; then
-    export WORKON_HOME=$HOME/.envs
-    export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
-    source /usr/bin/virtualenvwrapper_lazy.sh
-fi
-
 # Don't use cowsay with ansible
 export ANSIBLE_NOCOWS=1
 
