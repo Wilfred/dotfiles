@@ -204,8 +204,6 @@ export NINJA_STATUS="[done:%f doing:%r left:%u elapsed:%e] "
 setopt AUTO_PUSHD
 zstyle ':completion:*:directory-stack' list-colors '=(#b) #([0-9]#)*( *)==95=38;5;12'
 
-alias .j='just --justfile ~/.user.justfile --working-directory .'
-
 # Make a directory and CD into it.
 mkcd() {
     mkdir $1 && cd $1
