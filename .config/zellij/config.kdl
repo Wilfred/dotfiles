@@ -1,0 +1,16 @@
+show_startup_tips false
+
+keybinds {
+    // Free Ctrl+g for programs (e.g. Claude, Emacs, zile).
+    unbind "Ctrl g"
+
+    // Alt+g locks from any ordinary Zellij mode.
+    shared_except "locked" {
+        bind "Alt g" { SwitchToMode "Locked"; }
+    }
+
+    // Alt+g unlocks.
+    locked {
+        bind "Alt g" { SwitchToMode "Normal"; }
+    }
+}
