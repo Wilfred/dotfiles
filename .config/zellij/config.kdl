@@ -4,13 +4,34 @@ keybinds {
     // Free Ctrl+g for programs (e.g. Claude, Emacs, zile).
     unbind "Ctrl g"
 
-    // Alt+g locks from any ordinary Zellij mode.
     shared_except "locked" {
+        // Alt+g locks from any ordinary Zellij mode.
         bind "Alt g" { SwitchToMode "Locked"; }
+
+
+        // Fuzzy tab/pane switcher.
+        bind "Ctrl y" {
+            LaunchOrFocusPlugin "zellij-pane-picker" {
+                floating true; move_to_focused_tab true;
+            }
+        }
     }
 
     // Alt+g unlocks.
     locked {
         bind "Alt g" { SwitchToMode "Normal"; }
+    }
+}
+
+
+load_plugins {
+    zellij-pane-picker
+}
+
+plugins {
+    zellij-pane-picker location="https://github.com/shihanng/zellij-pane-picker/releases/download/v0.6.0/zellij-pane-picker.wasm" {
+        list_panes ""
+        plugin_select_down "Ctrl n"
+        plugin_select_up "Ctrl p"
     }
 }
