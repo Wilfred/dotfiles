@@ -48,6 +48,8 @@ def create_symlink(source_path, target, overwrite=False):
             os.unlink(target)
         elif os.path.islink(target):
             raise FileExists("skipped, symlink to %s" % os.readlink(target))
+        elif os.path.isdir(target):
+            raise FileExists("skipped, directory")
         else:
             raise FileExists("skipped, plain file")
 
