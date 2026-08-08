@@ -67,34 +67,60 @@ def create_symlink(source_path, target, overwrite=False):
     os.symlink(source_path, target)
 
 
-def is_configuration_file(path):
-    file_name = os.path.basename(path)
+# Dotfiles that belong to this repository itself, rather than
+# configuration that we want in the home directory.
+REPO_FILE_NAMES = {
+    ".git",
+    ".gitignore",
+    ".gitattributes",
+    ".gitmodules",
+    ".github",
+}
 
-    # skip .git files specific to the repo
-    if file_name in [".git", ".gitignore"]:
-        return False
+
+def is_ignored_file(file_name):
+    """Files that are never worth symlinking, wherever they occur."""
+    if file_name in REPO_FILE_NAMES:
+        return True
 
     # emacs backup files
-    if file_name.startswith(".#"):
-        return False
+    if file_name.startswith(".#") or file_name.endswith("~"):
+        return True
 
-    if file_name.startswith("."):
+    # macOS directory metadata
+    if file_name == ".DS_Store":
+        return True
+
+    # python bytecode from this repo
+    if file_name == "__pycache__":
         return True
 
     return False
+
+
+def is_configuration_file(path):
+    file_name = os.path.basename(path)
+
+    if is_ignored_file(file_name):
+        return False
+
+    return file_name.startswith(".")
 
 
 def get_configuration_file_names(path):
     for file_name in os.listdir(path):
         absolute_path = os.path.join(path, file_name)
 
-        if is_configuration_file(absolute_path):
+        if not is_configuration_file(absolute_path):
+            continue
 
-            if os.path.isdir(absolute_path):
-                for nested_file_name in os.listdir(absolute_path):
-                    yield os.path.join(file_name, nested_file_name)
-            else:
-                yield file_name
+        if os.path.isdir(absolute_path):
+            for nested_file_name in os.listdir(absolute_path):
+                if is_ignored_file(nested_file_name):
+                    continue
+                yield os.path.join(file_name, nested_file_name)
+        else:
+            yield file_name
 
 
 if __name__ == "__main__":
@@ -122,6 +148,9 @@ if __name__ == "__main__":
     bin_target_dir = os.path.join(home_path, "bin")
 
     for file_name in os.listdir(bin_source_dir):
+        if is_ignored_file(file_name):
+            continue
+
         source_path = os.path.join(bin_source_dir, file_name)
         target_path = os.path.join(bin_target_dir, file_name)
 
