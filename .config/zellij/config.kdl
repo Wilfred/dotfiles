@@ -1,5 +1,9 @@
 show_startup_tips false
 
+// Prefer showing a border, it makes Ctrl-t state much more
+// obvious. This changed in Zellij 0.45.
+pane_frame_style "full"
+
 keybinds {
     // Free Ctrl+g for programs (e.g. Claude, Emacs, zile).
     unbind "Ctrl g"
