@@ -8,6 +8,17 @@ keybinds {
     // Free Ctrl+g for programs (e.g. Claude, Emacs, zile).
     unbind "Ctrl g"
 
+    // Free Ctrl+p for programs (e.g. Emacs and shell history).
+    unbind "Ctrl p"
+
+    shared_except "pane" "locked" {
+        bind "F8" { SwitchToMode "Pane"; }
+    }
+
+    pane {
+        bind "F8" { SwitchToMode "Normal"; }
+    }
+
     shared_except "locked" {
         // Alt+g locks from any ordinary Zellij mode.
         bind "Alt g" { SwitchToMode "Locked"; }
