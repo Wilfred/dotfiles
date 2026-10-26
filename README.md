@@ -19,3 +19,9 @@ If you have old configuration you want to wipe, pass `--force` to make_links:
 
 make_links will copy any file whose name is `.FOO` or `.FOO/BAR`,
 except git metadata.
+
+## Nix packages
+
+Edit `packages.nix`, then apply:
+
+    $ nix-env -f ./packages.nix -i
