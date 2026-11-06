@@ -123,6 +123,29 @@ def get_configuration_file_names(path):
             yield file_name
 
 
+def link_configuration(source_path, target, overwrite=False):
+    if (
+        os.path.isdir(source_path)
+        and os.path.isdir(target)
+        and not os.path.islink(target)
+    ):
+        for file_name in sorted(os.listdir(source_path)):
+            if not is_ignored_file(file_name):
+                yield from link_configuration(
+                    os.path.join(source_path, file_name),
+                    os.path.join(target, file_name),
+                    overwrite,
+                )
+        return
+
+    try:
+        create_symlink(source_path, target, overwrite)
+        status = "linked"
+    except FileExists as e:
+        status = str(e)
+    yield target, status
+
+
 if __name__ == "__main__":
     home_path = os.path.expanduser("~")
 
@@ -137,11 +160,8 @@ if __name__ == "__main__":
         source_path = os.path.join(dotfiles_path, file_name)
         target_path = os.path.join(home_path, file_name)
 
-        try:
-            create_symlink(source_path, target_path, overwrite)
-            print("%s: %s" % (display_path(target_path), colour_status("linked")))
-        except FileExists as e:
-            print("%s: %s" % (display_path(target_path), colour_status(str(e))))
+        for target, status in link_configuration(source_path, target_path, overwrite):
+            print("%s: %s" % (display_path(target), colour_status(status)))
 
     # Symlink files from bin directory to ~/bin
     bin_source_dir = os.path.join(dotfiles_path, "bin")
