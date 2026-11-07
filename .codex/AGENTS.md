@@ -35,6 +35,7 @@
 - Prefer Python or another language with static analysis for maintained
   scripts. Keep shell to short command sequences.
 - Use consistent linting, formatting, and type checking. Avoid conflicting tools.
+- Preserve existing formatting outside the requested changes.
 - Script recurring work so results are reproducible. Keep scripts and their
   dependencies organized in clearly named directories.
 - Obtain concrete bug reproductions and verify intended behavior. A crash fix
