@@ -19,8 +19,8 @@
   refactors, formatting, and policy changes so each can be reviewed in isolation.
   Unrelated fixes found along the way belong in a separate PR.
 - Rebase onto the latest default branch before opening a PR. Fold follow-up
-  changes into the relevant commit rather than adding fixup commits, and keep
-  the commit message and PR description in sync with the final diff.
+  changes into the relevant commit rather than adding fixup commits. Keep PR
+  descriptions aligned with commit messages and both in sync with the final diff.
 - Use concise commit subjects and wrap commit bodies at 72 columns.
 - Keep commit messages and PR descriptions standalone and timeless. Focus on
   what changed and the resulting behavior. Omit session chronology and
