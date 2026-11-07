@@ -21,8 +21,6 @@
 - Keep commit messages and PR descriptions standalone and timeless. Focus on
   what changed, the resulting behavior, and relevant validation. Omit session
   chronology and incidental work.
-- Follow through on requested pushes and merges by checking CI. Report local
-  verification, CI results, and deployment status accurately and separately.
 
 ## Implementation
 
