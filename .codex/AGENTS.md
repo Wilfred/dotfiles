@@ -23,8 +23,9 @@
   the commit message and PR description in sync with the final diff.
 - Use concise commit subjects and wrap commit bodies at 72 columns.
 - Keep commit messages and PR descriptions standalone and timeless. Focus on
-  what changed, the resulting behavior, and relevant validation. Omit session
-  chronology and incidental work.
+  what changed and the resulting behavior. Omit session chronology and
+  incidental work. Omit routine test descriptions and validation results from
+  commit messages and PR descriptions.
 
 ## Implementation
 
