@@ -14,10 +14,15 @@ it does not authorize merging PRs or cleaning unrelated work.
   preferences, and verified findings from this session before removing worktrees.
 - Consider repository-specific instructions for project facts and conventions,
   and dotfiles instructions for preferences that apply across projects.
-- Suggest only reusable, evidence-backed guidance that is missing or contradicts
-  existing instructions. Prefer revising an existing rule over adding a duplicate.
+- Look for general lessons about decisions, workflow, or collaboration that are
+  likely to recur. Before proposing a rule, identify a plausible future task where
+  it would change behavior. Do not turn task-specific wording or implementation
+  choices into standing instructions without evidence of broader applicability.
+- Suggest only evidence-backed guidance that is missing or contradicts existing
+  instructions. Prefer revising an existing rule over adding a duplicate. If the
+  lesson is already covered or unlikely to recur, no update is needed.
   Keep guidance standalone and timeless; omit session chronology, finding IDs,
-  temporary environment problems, and one-off choices presented as general rules.
+  and temporary environment problems.
 - Report concrete proposed wording and its destination, or say no updates are
   needed. Edit AGENTS.md only if the user has requested or already authorized
   those updates. Keep authorized policy changes separate from feature commits,
