@@ -8,6 +8,10 @@
   report findings in the conversation, and don't comment on issues or PRs
   unless asked.
 - Report concrete findings and remaining work during longer tasks.
+- Prefer the `gh` CLI for GitHub operations when available, and keep its
+  output concise. Codex displays GitHub MCP calls with verbose arguments
+  and uninformative "Action completed" messages; using `gh` avoids that
+  display noise. Fall back to MCP when `gh` cannot perform the operation.
 
 ## Commits and pull requests
 
