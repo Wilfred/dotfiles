@@ -108,14 +108,14 @@ def is_configuration_file(path):
 
 
 def get_configuration_file_names(path):
-    for file_name in os.listdir(path):
+    for file_name in sorted(os.listdir(path)):
         absolute_path = os.path.join(path, file_name)
 
         if not is_configuration_file(absolute_path):
             continue
 
         if os.path.isdir(absolute_path):
-            for nested_file_name in os.listdir(absolute_path):
+            for nested_file_name in sorted(os.listdir(absolute_path)):
                 if is_ignored_file(nested_file_name):
                     continue
                 yield os.path.join(file_name, nested_file_name)
@@ -167,7 +167,7 @@ if __name__ == "__main__":
     bin_source_dir = os.path.join(dotfiles_path, "bin")
     bin_target_dir = os.path.join(home_path, "bin")
 
-    for file_name in os.listdir(bin_source_dir):
+    for file_name in sorted(os.listdir(bin_source_dir)):
         if is_ignored_file(file_name):
             continue
 
