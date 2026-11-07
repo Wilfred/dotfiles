@@ -1,0 +1,5 @@
+# Limit build and test concurrency when running parallel Codex sessions.
+[shell_environment_policy.set]
+CARGO_BUILD_JOBS = "2"
+RUST_TEST_THREADS = "2"
+RAYON_NUM_THREADS = "2"
