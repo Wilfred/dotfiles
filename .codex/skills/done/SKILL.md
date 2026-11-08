@@ -1,32 +1,25 @@
 ---
 name: done
-description: Finish a development session by removing merged worktrees and branches and reviewing session lessons for repository and dotfiles AGENTS.md updates, when the user requests cleanup.
+description: Finish a development session by consolidating useful lessons in shared memory and removing this session's merged worktrees and branches, when cleanup is requested.
 ---
 
 Use the current session to identify the repository, worktrees, branches, and PRs
 to finish. Invoking `$done` authorizes cleanup of this session's merged work;
 it does not authorize merging PRs or cleaning unrelated work.
 
-## Review session lessons
+## Consolidate session lessons
 
-- Read the repository's applicable AGENTS.md files and the working preferences
-  in dotfiles (normally `~/dotfiles/.codex/AGENTS.md`). Review user corrections,
-  preferences, and verified findings from this session before removing worktrees.
-- Consider repository-specific instructions for project facts and conventions,
-  and dotfiles instructions for preferences that apply across projects.
-- Look for general lessons about decisions, workflow, or collaboration that are
-  likely to recur. Before proposing a rule, identify a plausible future task where
-  it would change behavior. Do not turn task-specific wording or implementation
-  choices into standing instructions without evidence of broader applicability.
-- Suggest only evidence-backed guidance that is missing or contradicts existing
-  instructions. Prefer revising an existing rule over adding a duplicate. If the
-  lesson is already covered or unlikely to recur, no update is needed.
-  Keep guidance standalone and timeless; omit session chronology, finding IDs,
-  and temporary environment problems.
-- Report concrete proposed wording and its destination, or say no updates are
-  needed. Edit AGENTS.md only if the user has requested or already authorized
-  those updates. Keep authorized policy changes separate from feature commits,
-  and preserve them outside any worktree scheduled for removal.
+- Locate or clone <https://github.com/Wilfred/shared_memory>, read its README,
+  and follow `consolidate.md`. Review user corrections, preferences, and verified
+  findings while the session's worktrees and evidence are still available.
+- Record useful lessons directly in shared memory, with general preferences
+  and project-specific knowledge in their appropriate places. Apply the repo's
+  future-use criteria and size checks; skip updates when nothing useful is new.
+- Follow the memory repo's sync workflow: pull regularly, commit useful changes,
+  and push directly to `main` without routine confirmation. Keep these commits
+  separate from project changes and preserve them outside cleanup candidates.
+- Preserve unsynced work and report sync failures. Keep durable lessons in shared
+  memory rather than redirecting them to AGENTS.md or harness-local memory.
 
 ## Clean up merged work
 
@@ -55,4 +48,4 @@ it does not authorize merging PRs or cleaning unrelated work.
   and report the blocked action without repeatedly retrying.
 
 Finish with what was removed, what was retained and why, the surviving checkout,
-and any proposed or applied AGENTS.md updates.
+and any shared-memory updates or sync failures.
