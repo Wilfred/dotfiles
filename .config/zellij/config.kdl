@@ -43,16 +43,3 @@ keybinds {
         bind "Alt g" { SwitchToMode "Normal"; }
     }
 }
-
-
-load_plugins {
-    zellij-pane-picker
-}
-
-plugins {
-    zellij-pane-picker location="https://github.com/shihanng/zellij-pane-picker/releases/download/v0.6.0/zellij-pane-picker.wasm" {
-        list_panes ""
-        plugin_select_down "Ctrl n"
-        plugin_select_up "Ctrl p"
-    }
-}
