@@ -4,6 +4,12 @@ show_startup_tips false
 // obvious. This changed in Zellij 0.45.
 pane_frame_style "full"
 
+// Save sessions often and with pane contents, so they survive a reboot.
+session_serialization true
+serialize_pane_viewport true
+scrollback_lines_to_serialize 2000
+serialization_interval 60
+
 keybinds {
     // Free Ctrl+g for programs (e.g. Claude, Emacs, zile).
     unbind "Ctrl g"
