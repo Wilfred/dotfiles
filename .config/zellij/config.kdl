@@ -25,6 +25,22 @@ keybinds {
         bind "F8" { SwitchToMode "Normal"; }
     }
 
+    tab {
+        // It's too easy to press x accidentally, use F12 to
+        // close the pane.
+        unbind "x"
+        bind "F12" { CloseTab; SwitchToMode "Normal"; }
+
+        // Try to avoid accidentally staying in tab mode by leaving immediately after j/k.
+        bind "h" "Left" "Up" "k" {
+            GoToPreviousTab; SwitchToMode "Normal";
+        }
+        bind "l" "Right" "Down" "j" {
+            GoToNextTab; SwitchToMode "Normal";
+        }
+        bind "Tab" { ToggleTab; SwitchToMode "Normal"; }
+    }
+
     shared_except "locked" {
         // Alt+g locks from any ordinary Zellij mode.
         bind "Alt g" { SwitchToMode "Locked"; }
