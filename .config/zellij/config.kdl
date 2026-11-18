@@ -28,14 +28,6 @@ keybinds {
     shared_except "locked" {
         // Alt+g locks from any ordinary Zellij mode.
         bind "Alt g" { SwitchToMode "Locked"; }
-
-
-        // Fuzzy tab/pane switcher.
-        bind "Ctrl y" {
-            LaunchOrFocusPlugin "zellij-pane-picker" {
-                floating true; move_to_focused_tab true;
-            }
-        }
     }
 
     // Alt+g unlocks.
