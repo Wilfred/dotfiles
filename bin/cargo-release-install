@@ -11,30 +11,30 @@ if [[ ! -f "Cargo.toml" ]]; then
     exit 1
 fi
 
-cargo build --release
+# Use the executable paths Cargo reports for this build.
+BINARIES=$(cargo build --release --message-format=json-render-diagnostics | jq -cn '
+    [inputs | select(.reason == "compiler-artifact" and .executable != null)
+    | select(.target.kind | index("bin"))
+    | {name: .target.name, path: .executable}]
+')
 
-# Get binary targets from cargo metadata
-BINARIES=$(cargo metadata --no-deps --format-version 1 | jq -r '.packages[0].targets[] | select(.kind[] == "bin") | .name')
-
-if [[ -z "$BINARIES" ]]; then
-    echo "Error: No binary targets found in this crate"
-    echo "This might be a library crate with no binary target"
+BINARY_COUNT=$(jq 'length' <<< "$BINARIES")
+if [[ $BINARY_COUNT -eq 0 ]]; then
+    echo "Error: Cargo did not build any binary executables"
     exit 1
 fi
 
-BINARY_COUNT=$(echo "$BINARIES" | wc -l)
 if [[ $BINARY_COUNT -gt 1 ]]; then
     echo "Found multiple binaries:"
-    echo "$BINARIES"
-    echo ""
-    echo "Error: Multiple binary targets found. Please specify which one to install."
+    jq -r '.[].name' <<< "$BINARIES"
+    echo "Error: Cannot install a project with multiple binary targets"
     exit 1
 fi
 
-BINARY_NAME="$BINARIES"
+BINARY_NAME=$(jq -r '.[0].name' <<< "$BINARIES")
+BINARY_PATH=$(jq -r '.[0].path' <<< "$BINARIES")
 
 # Check if the binary exists
-BINARY_PATH="target/release/$BINARY_NAME"
 if [[ ! -f "$BINARY_PATH" ]]; then
     echo "Error: Binary not found at $BINARY_PATH"
     exit 1
