@@ -1,5 +1,12 @@
-# Apply explicitly with: nix-env -f ./packages.nix -i
-# Keep Nix evaluation out of shell startup.
+# Installs the following programs with nix, so I can grab all the
+# tools I regularly use in a single invocation. Handy when starting a
+# new machine.
+#
+# This deliberately has zero actions on shell startup to ensure
+# terminals start promptly. You need to explicitly run the following
+# to update the nix binaries:
+#
+# $ nix-env -f ./packages.nix -i --remove-all
 let
   # Pinned from nixpkgs-unstable; update the revision and hash together.
   revision = "5adc50831c259f87faeb09ddf930d43597197473";
