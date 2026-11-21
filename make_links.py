@@ -67,22 +67,17 @@ def create_symlink(source_path, target, overwrite=False):
     os.symlink(source_path, target)
 
 
-# Dotfiles that belong to this repository itself, rather than
-# configuration that we want in the home directory.
-REPO_FILE_NAMES = {
-    ".git",
-    ".gitignore",
-    ".gitattributes",
-    ".gitmodules",
-    ".github",
-}
+# Files in this repository named dot_foo are linked to ~/.foo.
+DOT_PREFIX = "dot_"
+
+
+def target_name(file_name):
+    """The name in the home directory for a top-level file in this repo."""
+    return "." + file_name[len(DOT_PREFIX) :]
 
 
 def is_ignored_file(file_name):
     """Files that are never worth symlinking, wherever they occur."""
-    if file_name in REPO_FILE_NAMES:
-        return True
-
     # emacs backup files
     if file_name.startswith(".#") or file_name.endswith("~"):
         return True
@@ -104,7 +99,7 @@ def is_configuration_file(path):
     if is_ignored_file(file_name):
         return False
 
-    return file_name.startswith(".")
+    return file_name.startswith(DOT_PREFIX)
 
 
 def get_configuration_file_names(path):
@@ -158,7 +153,7 @@ if __name__ == "__main__":
 
     for file_name in get_configuration_file_names(dotfiles_path):
         source_path = os.path.join(dotfiles_path, file_name)
-        target_path = os.path.join(home_path, file_name)
+        target_path = os.path.join(home_path, target_name(file_name))
 
         for target, status in link_configuration(source_path, target_path, overwrite):
             print("%s: %s" % (display_path(target), colour_status(status)))
