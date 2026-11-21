@@ -6,7 +6,7 @@
     "ask": [
       "Bash(rm:*)"
     ],
-    "defaultMode": "acceptEdits"
+    "defaultMode": "auto"
   },
   "hooks": {
     "PermissionRequest": [
