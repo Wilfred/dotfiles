@@ -3,3 +3,7 @@
 CARGO_BUILD_JOBS = "2"
 RUST_TEST_THREADS = "2"
 RAYON_NUM_THREADS = "2"
+
+# Always allow writing here.
+[sandbox_workspace_write]
+writable_roots = ["/home/wilfred/projects/shared_memory"]
