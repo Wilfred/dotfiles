@@ -17,8 +17,8 @@ If you have old configuration you want to wipe, pass `--force` to make_links:
 
     $ ./make_links.py --force
 
-make_links will copy any file whose name is `.FOO` or `.FOO/BAR`,
-except git metadata.
+make_links will symlink any file whose name is `dot_FOO` or
+`dot_FOO/BAR` to `~/.FOO` or `~/.FOO/BAR` respectively.
 
 ## Nix packages
 
